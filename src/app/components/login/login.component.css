@@ -1,0 +1,33 @@
+.row.guest, .col.guest {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    padding: 0px 20px;
+}
+
+.logo {
+    background: url('../../../assets/images/habbologo_blackR.gif') -8px -33px;
+    height: 60px;
+    width: 140px;
+}
+
+
+.hotel-view {
+    background: url(http://habboo-a.akamaihd.net/c_images/reception/default_new_bg_right.png) no-repeat 100% 0;
+}
+
+form.login {
+    background: #e2e2e2;
+    padding: 15px;
+    border: 2px solid #afafaf;
+    border-top: 2px solid #ffffff;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px -1px black;
+}
+
+.slogan {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}

@@ -13,13 +13,13 @@ export const Routing = {
         children: {
             LOGIN: 
             {
-                url: 'login',
+                url: '',
                 title: 'Login',
                 onlyGuest: true
             },
             REGISTER: 
             {
-                url: 'quickregister',
+                url: 'register',
                 title: 'Registro',
                 onlyGuest: true
             }

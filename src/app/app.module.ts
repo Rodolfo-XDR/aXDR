@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule  } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { RecaptchaModule } from 'ng-recaptcha';
+
 import { AppComponent } from './components/app/app.component';
 import { BaseComponent } from './components/base/base.component';
 import { UserComponent } from './components/user/user.component';
@@ -19,6 +21,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HowToPlayComponent } from './components/how-to-play/how-to-play.component';
 import { WhatIsComponent } from './components/what-is/what-is.component';
 import { HelpComponent } from './components/help/help.component';
+import { ClientComponent } from './components/client/client.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +40,15 @@ import { HelpComponent } from './components/help/help.component';
     RegisterComponent,
     HowToPlayComponent,
     WhatIsComponent,
-    HelpComponent
+    HelpComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RecaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

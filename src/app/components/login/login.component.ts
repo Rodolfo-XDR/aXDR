@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/shared/authentication.service';
+import { NgForm } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { Routing } from 'src/routing';
 
 @Component({
   selector: 'app-login',
@@ -9,23 +11,76 @@ import { AuthenticationService } from 'src/app/shared/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
-  loading = false;
-  submitted = false;
-  returnUrl: string;
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService)
-  { 
-    if (this.authenticationService.currentUserValue) { 
-      this.router.navigate(['/']);
-    }
-  }
+  private loginForm : NgForm;
+
+  private isError = false;
+  private errorMsg = '';
+
+  constructor(private authenticationService : AuthenticationService, private router : Router) { }
 
   ngOnInit() {
-    console.log(this.loginForm);
-    console.log(this.formBuilder)
   }
 
-  login
+  /*
+   *    
+  */
+  login(f : NgForm)
+  {
+    console.log(f);
 
+    this.loginForm = f;
+
+    if(this.loginForm.value == null || undefined)
+      return this.errorHandling('invalid_form');
+
+    if(this.loginForm.value['login.identification'] == undefined || this.loginForm.value['login.password'] == undefined)
+      return this.errorHandling('invalid_form');
+
+    this.authenticationService.login(this.loginForm.value['login.identification'], this.loginForm.value['login.password'])
+    .pipe(first())
+    .subscribe(
+      data => {
+        this.router.navigate([Routing.USER.url + Routing.USER.children.HABBO.directURL]);
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+
+  /*
+   * @desc Set error on the component and identify the error message to be displayed in the view.
+   * @param {string} error code
+  */
+  errorHandling(error : String) {
+    this.isError = true;
+
+    switch(error)
+    {
+      case 'invalid_form':
+        this.errorMsg = "Debes rellenar todos tus datos correctamente";
+        break;
+      case 'wrong_password':
+      case 'user_not_found':
+        this.errorMsg = "Los datos proporcionados son incorrectos";
+        break;
+      case 'invalid_parameters':
+      case 'invalid_localStorage':
+      default:
+        this.errorMsg = "Ha ocurrido un Error (" + error + ")";
+        break;
+    }
+
+    setTimeout(() => this.resetError(), 5000);
+  }
+
+  /*
+   * Resets the errorMsg to empty string and error sets to false. 
+   */
+  resetError() 
+  {
+    this.isError = false;
+    this.errorMsg = "";
+  }
 }

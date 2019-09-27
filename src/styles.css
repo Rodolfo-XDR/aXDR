@@ -1,1 +1,449 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+	font-family: 'Ubuntu Light';
+	src: url("./assets/fonts/Ubuntu-Light.ttf") format('truetype');
+}  
+
+html {
+	height: 100%;
+  }
+	
+html, body {
+    font-family: 'Ubuntu Light';
+    height: 100% !important;
+    margin: 0;
+}
+
+.arcticSwitch .check::after {
+    background: #ffffff!important;
+    border-color: transparent!important;	
+}
+
+.arcticSwitch input[type="checkbox"]:checked ~ .check {
+    background: #106b3a!important;
+}
+
+.arcticSwitch input[type="checkbox"]:checked ~ .check::after {
+    border-color: #ffffff!important;
+    background: #ffffff!important;
+}
+
+.arctic {
+    border: none;
+    border-radius: 3px;
+}
+
+.arctic > input[type=text], input[type=password], input[type=tel], input[type=datetime-local], input[type=email], input[type=file], input[type=month], input[type=number], input[type=search], input[type=time], input[type=url], input[type=week], input[type=file], select, textarea, .file, .input, .textarea, .select, .tag-input, .spinner {
+    background: rgba(0, 0, 0, 0.3);
+    color: #67696f;
+}
+
+.arctic > input[type=text].required, input[type=password].required, input[type=tel].required, input[type=datetime-local].required, input[type=email].required, input[type=file].required, input[type=month].required, input[type=number].required, input[type=search].required, input[type=time].required, input[type=url].required, input[type=week].required, input[type=file].required, select.required, textarea.required, .file.required, .input.required, .textarea.required, .select.required, .tag-input.required, .spinner.required {
+    border: none !important;
+}
+
+.arctic.dropdown-toggle::before {
+    border-color: #ffffff;
+}
+
+.arctic.focused {
+    box-shadow: none;
+}
+
+.arctic .drop-container {
+    background: transparent;
+    border: none;
+}
+
+.arctic .d-menu {
+    background: rgba(0,0,0,0.5);
+    color: #ffffff;
+}
+
+.carousel {
+    background-color: transparent;
+    max-width: 753px;
+    max-height: 300px;
+}
+
+.carousel .slide {
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 18px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+hr {
+    border-width: 0 0 8px;
+    clear: both;
+    margin: 1.35em auto;
+    max-width: 100%;
+    border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1"><circle fill="hsla(0, 0%, 0%, 0.3)" cx="1" cy="0.3" r="0.3"/></svg>') 0 0 100% repeat;
+    border-style: inset;
+    background-color: transparent;
+}
+
+.box {
+    border-radius: 3px;
+    padding: 10px;
+    margin: 0 0 10px;
+}
+.box.darkTransparent {
+    background: rgba(16, 16, 16, 0.55);
+}
+.box > .title {
+    font-size: 14pt;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 0px 0px rgba(93, 93, 93, 0.2);
+    padding: 5px 5px;
+}
+.box > .content {
+    font-size: 10pt;
+    padding: 10px;
+}
+
+.button.habbo {
+    color: #ffffff;
+    background-color: #1f5409;
+    border: 2px solid #74bd2a;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.5);
+    font-family: 'Ubuntu Light';
+    border-radius: 0.25rem;
+}
+
+.button.habbo.blue {
+    background-color: #00608e;
+    border: 2px solid #0499e4;
+}
+
+.button.habbo.red {
+    background-color: #bb0539;
+    border: 2px solid #940d24;
+}
+
+.button.habbo:hover {
+    background-color: #296d0d;
+}
+
+.button.habbo.blue:hover {
+    background-color: #0777ad;
+}
+
+.button.habbo.red:hover {
+    background-color: #da0b46;
+}
+
+.client, .hotel {
+    height: 100%;
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.hotel {
+    left: 0;
+    background-color: #000;
+    z-index: 600;
+}
+
+.client {
+    left: -9999px;
+}
+
+.client--visible {
+    left: 0;
+}
+
+.client__buttons {
+    left: 12px;
+    position: absolute;
+    top: 12px;
+    z-index: 630;
+}
+
+.client__buttons .client__close, .client__buttons button {
+    line-height: 1.2;
+    text-align: center;
+    color: #000;
+    font-size: 12px;
+    border-style: solid;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.client__buttons button {
+    box-shadow: 0 3px 0 1px rgba(0,0,0,.3);
+    background-color: #ffb900;
+    border-color: #ffea00;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border-width: 2px;
+    display: block;
+    float: left;
+}
+
+.client__buttons .client__close, .hotel-button {
+    filter: drop-shadow(-1px 4px 0 rgba(0, 0, 0, .3));
+}
+
+.client__buttons .client__close, .client__buttons button {
+    line-height: 1.2;
+    text-align: center;
+    color: #000;
+    font-size: 12px;
+    border-style: solid;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.client__buttons .client__close {
+    display: inline-block;
+    background-color: #ffb900;
+    border-color: #ffea00;
+    border-radius: 0 5px 5px 0;
+    border-width: 2px 2px 2px 1px;
+    box-shadow: none;
+    position: relative;
+    margin-left: 14px;
+    padding: 5px 6px;
+}
+
+.client__buttons .client__close:after, .client__buttons .client__close:before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-style: solid;
+}
+
+.client__buttons .client__close:before {
+    border-width: 15px;
+    top: -2px;
+    border-color: transparent #ffea00 transparent transparent;
+    left: -31px;
+}
+
+.client__buttons .client__close:hover:before {
+    border-color: transparent #fffd70 transparent transparent;
+}
+
+.client__buttons .client__close:after {
+    border-width: 13px;
+    top: 0;
+    border-color: transparent #ffb900 transparent transparent;
+    left: -26px;
+}
+
+.client__buttons .client__close:hover:after {
+    border-color: transparent #ffd400 transparent transparent;
+}
+
+.client__close__expand {
+    transition: width .15s ease-out;
+    float: left;
+    overflow: hidden;
+}
+
+.client__close__text {
+    line-height: 16px;
+    padding-left: 6px;
+}
+
+.client__buttons .client__fullscreen {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.client__buttons button:first-child, .client__buttons button:not(:first-child):not(:last-child) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.client__buttons button:not(:last-child) {
+    margin-right: 4px;
+}
+
+.client__buttons button:last-child, .client__buttons button:not(:first-child):not(:last-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.client__buttons .client__close:active, .client__buttons .client__close:hover {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.client__buttons .client__close:hover {
+    background-color: #ffd400;
+    border-color: #fffd70;
+}
+
+.client__buttons button:hover {
+    background-color: #ffd400;
+    border-color: #fffd70;
+}
+
+.icon {
+    display: inline-block;
+    font-style: normal;
+}
+
+.icon--habbo {
+    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/sprite.56f427a4.png);
+    background-position: -511px -413px;
+    width: 16px;
+    height: 16px;
+}
+
+.icon--fullscreen {
+    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/sprite.56f427a4.png);
+    background-position: -511px -447px;
+    width: 15px;
+    height: 14px;
+}
+
+.client__close__icon {
+    float: left;
+}
+
+.client__fullscreen__icon {
+    display: block;
+}
+
+.habbo-client-closed, .habbo-client-error {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: -ms-flexbox;
+    padding: 48px 12px;
+    z-index: 610;
+    left: 0;
+}
+
+.habbo-client-error {
+    -ms-flex-align: center;
+    align-items: center;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.client-error__background-frank {
+    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/backgrounds/flash_error_bg.57539aa2.png);
+    display: block;
+    height: 368px;
+    padding: 80px 17px 35px 242px;
+    position: relative;
+    width: 639px;
+}
+
+.client-error__text-contents {
+    height: 253px;
+    position: absolute;
+    text-align: left;
+}
+
+.client-error__hotel-button-div {
+    bottom: 30px;
+    float: right;
+    position: absolute;
+    right: 30px;
+}
+
+.client-error__title {
+    text-align: left;
+    font-size: 36px;
+    color: #fff;
+}
+
+.client-error__text {
+    color: #7ecaee;
+}
+
+.hotel-button {
+    display: inline-block;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #ffb900;
+    border-color: #ffea00;
+    color: #000;
+    border-radius: 5px 0 0 5px;
+    border-width: 2px 1px 2px 2px;
+    border-style: solid;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    box-shadow: none;
+    position: relative;
+    margin-right: 20px;
+    margin-top: -3px;
+    padding: 6px 12px 6px 24px;
+}
+
+.hotel-button__text {
+    position: relative;
+    padding-right: 27px;
+    text-align: right;
+    line-height: 26px;
+}
+
+.hotel-button__text:before {
+    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/sprite.56f427a4.png);
+    background-position: -242px -434px;
+    width: 21px;
+    height: 26px;
+    content: '';
+    display: block;
+    margin-top: -13px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.hotel-button:after, .hotel-button:before {
+    border-style: solid;
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+.hotel-button:before {
+    border-width: 21px;
+    top: -2px;
+    border-color: transparent transparent transparent #ffea00;
+    right: -43px;
+}
+
+.hotel-button:after {
+    border-width: 19px;
+    top: 0;
+    border-color: transparent transparent transparent #ffb900;
+    right: -38px;
+}

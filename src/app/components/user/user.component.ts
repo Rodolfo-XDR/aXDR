@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent extends BaseComponent implements OnInit {
 
-  constructor() { }
+  public clientOpen : boolean;
+  
+  constructor(injector : Injector) {
+    super(injector);
+  }
 
   ngOnInit() {
+    this.clientShow.subscribe(v => this.clientOpen = v);
   }
+
+  logout() {
+    console.log("hola");
+  }
+
+
 
 }

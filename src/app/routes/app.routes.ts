@@ -1,14 +1,32 @@
 import { Routes } from '@angular/router';
 import { Routing } from 'src/routing';
 import { LoginComponent } from '../components/login/login.component';
+import { Error404Component } from '../components/error404/error404.component';
+import { UserComponent } from '../components/user/user.component';
+import { GuestComponent } from '../components/guest/guest.component';
+import { USER_ROUTES } from './user.routes';
+import { GUEST_ROUTES } from './guest.routes';
 
 export const APP_ROUTES: Routes = [
-    {
-        path: Routing.GUEST.children.LOGIN.url,
-        component: LoginComponent,
-        data: { 
-            title: Routing.GUEST.children.LOGIN.title, 
-            onlyGuest: Routing.GUEST.children.LOGIN.onlyGuest 
+    { 
+        path: Routing.GUEST.url, 
+        component: GuestComponent,
+        children: GUEST_ROUTES, 
+        data: {
+            title: Routing.GUEST.title
         }
+    },
+    { 
+        path: Routing.USER.url, 
+        component: UserComponent, 
+        children: USER_ROUTES, 
+        data: { 
+            hasMenuContent: true,
+            title: Routing.USER.title 
+        },
+    },
+    { 
+        path: '**', 
+        component: Error404Component 
     }
 ]

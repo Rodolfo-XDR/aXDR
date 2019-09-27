@@ -1,0 +1,25 @@
+<div class="client" [ngClass]="{'client--visible' : clientOpen}">
+    <div class="client__buttons">
+        <button class="client__close" (click)="goBack()">
+            <i class="client__close__icon icon icon--habbo"></i>
+            <div class="client__close__expand">
+                <div class="client__close__text">Web</div>
+            </div>
+        </button>
+        <button class="client__fullscreen">
+            <i class="client__fullscreen__icon icon icon--fullscreen"></i>
+        </button>
+    </div>
+
+    <div class="habbo-client-error">
+        <div class="client-error__background-frank">
+            <span class="client-error__text-contents">
+                <h1 class="client-error__title">¡Ya casi estás en Habbo!</h1>
+                <p class="client-error__text"><b>ATENCIÓN USUARI@ DE GOOGLE CHROME</b> Si quieres seguir jugando a Habbo tendrás que habilitar Flash Player desde los ajustes de tu navegador. Después de habilitarlo, haz clic sobre el botón amarillo del Hotel que hay abajo, y después en "ejecutar Flash" cuando te lo pida.</p>
+            </span>
+            <div class="client-error__hotel-button-div">
+                <a ng-href="http://www.adobe.com/go/getflashplayer" target="_blank" rel="noopener noreferrer" class="hotel-button" href="http://www.adobe.com/go/getflashplayer"><span class="hotel-button__text">Hotel</span></a>
+            </div>
+        </div>
+    </div>
+</div>
