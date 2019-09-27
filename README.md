@@ -1,27 +1,25 @@
-# AXDR
+# ![alt text](https://i.imgur.com/OTtNhTo.png) aXDR CMS 
+##### Version Alpha 1.0.2
+##### Mr.Mustache - Arctic Development
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+### Getting Started
+> aXDR CMS is a fresh from scratch Emulation website which emulates HabboWEB in a different style. **aXDR** stands for Azure XDR Content Management System. Although this project is pretty different to the original version created by **Boris Akopov**, the fundamental idea of **XDR** has not changed. **XDR** WEB offered a better system that could overlap other projects with modern technologies and functions. Right now aXDR is divided into two parts: *aXDR WEB App* **(FrontEnd)** & *aXDR API* **(Backend)**. This repository is only for aXDR WEB App made in angular.
 
-## Development server
+### Features
++ aXDR WEB App is currently working under *Angular 7.2*.
++ aXDR API is currently working under *ExpressJS*
+---
+## aXDR WEB Changelog
+> #### Pre-Alpha:
+> + Menu System working with activeRouting
+> + Habbo *sign in/sign up* within aXDR API
+> + Account log out working.
+> #### Alpha:
+> + Menu System Improvement (09-23-2019)
+> + Update from Angular 7 to Angular 8 (09-27-2019)
+> + Client Component Done (09-27-2019)
+> + All Web Reconstruction in process...
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Pending Errors:
++ Irregular Logouts
++ Refreshing Bugs
