@@ -20,5 +20,4 @@ export class HotelComponent extends BaseComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.hideClient();
   }
-
 }

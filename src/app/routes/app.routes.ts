@@ -6,6 +6,8 @@ import { UserComponent } from '../components/user/user.component';
 import { GuestComponent } from '../components/guest/guest.component';
 import { USER_ROUTES } from './user.routes';
 import { GUEST_ROUTES } from './guest.routes';
+import { UnauthGuard } from '../guards/unauth.guard';
+import { AuthGuard } from '../guards/auth.guard';
 
 export const APP_ROUTES: Routes = [
     { 
@@ -14,7 +16,8 @@ export const APP_ROUTES: Routes = [
         children: GUEST_ROUTES, 
         data: {
             title: Routing.GUEST.title
-        }
+        },
+        canActivateChild: [AuthGuard]
     },
     { 
         path: Routing.USER.url, 
@@ -24,6 +27,7 @@ export const APP_ROUTES: Routes = [
             hasMenuContent: true,
             title: Routing.USER.title 
         },
+        canActivateChild: [UnauthGuard]
     },
     { 
         path: '**', 

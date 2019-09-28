@@ -15,6 +15,7 @@ export class MeComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isLogged.subscribe(v => this.boolTest = v);
   }
 
 }

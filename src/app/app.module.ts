@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule  } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RecaptchaModule } from 'ng-recaptcha';
 
 import { AppComponent } from './components/app/app.component';
@@ -45,6 +46,7 @@ import { ClientComponent } from './components/client/client.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

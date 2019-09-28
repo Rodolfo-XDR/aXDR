@@ -1,5 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
+import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +12,7 @@ export class UserComponent extends BaseComponent implements OnInit {
 
   public clientOpen : boolean;
   
-  constructor(injector : Injector) {
+  constructor(injector : Injector, private router : Router) {
     super(injector);
   }
 
@@ -18,8 +20,14 @@ export class UserComponent extends BaseComponent implements OnInit {
     this.clientShow.subscribe(v => this.clientOpen = v);
   }
 
-  logout() {
-    console.log("hola");
+  disconnect() {
+    this.logout()
+    .pipe(first())
+    .subscribe(data => {
+      this.router.navigate(['/']);
+    }, err => {
+      
+    });
   }
 
 

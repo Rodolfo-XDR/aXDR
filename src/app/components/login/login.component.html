@@ -2,7 +2,7 @@
     <div class="cell-4">
         <div class="box">
             <div class="display2 fg-light text-bold">Conéctate.</div>
-            <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)" data-role="validator" action="javascript:" data-interactive-check="true">
+            <form  #loginForm="ngForm" (ngSubmit)="connect(loginForm)" data-role="validator" action="javascript:" data-interactive-check="true">
                   <div *ngIf="isError" class="bg-darkRed fg-white rounded text-small text-bold m-2 p-1">{{errorMsg}}</div>
                   <div class="form-group">
                     <label class="fg-lightGrayBlue text-bold">Usuario</label>
@@ -32,6 +32,7 @@
         <div id="slogan" class="fg-white">
             <h1 class="text-bold">Bienvenido a Habbo,</h1>
             <h4 class="text-bold">Un lugar extraño con gente genial.</h4>
+            <h2>{{ logStatus }}</h2>
         </div>
     </div>
   </div>

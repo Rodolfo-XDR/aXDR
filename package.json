@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.8",
     "es-swfobject": "^3.0.0",
     "metro4": "^4.3.1",
+    "ng-animate": "^0.3.4",
     "ng-recaptcha": "^5.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

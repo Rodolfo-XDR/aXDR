@@ -8,11 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'aXDR';
 
-  constructor()
-  {    
-  }
-
-  logout() {
-
-  }
+  constructor() {}
 }
