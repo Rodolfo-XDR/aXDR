@@ -30,6 +30,10 @@ export class BaseComponent implements OnInit {
     this.sessionService.hideClient();
   }
 
+  register(username : string, mail : string, password : string) {
+    return this.sessionService.register(username, mail, password);
+  }
+
   login(identification : string, password : string) {
     return this.sessionService.login(identification, password);
   }
@@ -48,5 +52,9 @@ export class BaseComponent implements OnInit {
 
   get isLogged() : BehaviorSubject<boolean> {
     return this.sessionService.IsLogged;
+  }
+
+  setLogged(value : boolean) : void {
+    this.sessionService.IsLogged.next(value);
   }
 }

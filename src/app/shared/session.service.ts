@@ -27,14 +27,21 @@ export class SessionService {
     else
     {
 
-      this.ping().subscribe(data => { console.log('Success'); }, err => { console.log('Error'); });
+      this.ping().subscribe(data => { console.log(data); }, err => { console.log('Error'); });
 
       this.isLogged.next(true);
     }
   }
 
+  register(username : string, mail : string, password : string) {
+    return this.http.post('http://localhost:3000/api/user/add', { username, mail, password }, { withCredentials: true })
+    .pipe(map(user => {
+      return user;
+    }));
+  }
+
   login(identification : string, password : string) {
-    //TODO check for duplicates (This goes on the aXDR API and just display an error)
+    //TODO check for login duplicates
     return this.http.post('http://localhost:3000/api/auth/login', { identification, password }, { withCredentials: true })
     .pipe(map(user => { 
 
@@ -42,7 +49,7 @@ export class SessionService {
         let tempHabbo : User = new User(user['session']['habbo']['id'], user['session']['habbo']['username'], user['session']['habbo']['mail'], user['session']['habbo']['motto'],user['session']['habbo']['look'], user['session']['habbo']['rank'], user['session']['habbo']['auth_ticket']);
 
         this.habbo.next(tempHabbo);
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('currentUser', JSON.stringify(user['session']['habbo']));
         this.isLogged.next(true);
       }
 

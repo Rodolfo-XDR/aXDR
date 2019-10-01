@@ -3,7 +3,7 @@
       <div class="box">
           <div class="title fg-light text-bold">REGISTRO</div>
         <div @bounceInRight class="content">
-          <form #registrationForm="ngForm" (ngSubmit)="register(registrationForm)" data-role="validator" action="javascript:" data-interactive-check="true">
+          <form #registrationForm="ngForm" (ngSubmit)="addUser(registrationForm)" data-role="validator" action="javascript:" data-interactive-check="true">
             <div class="row">
               <div class="cell">
                 <div @fadeIn *ngIf="isError" class="bg-darkRed fg-white rounded text-small text-bold mb-2 p-2">{{errorMsg}}</div>

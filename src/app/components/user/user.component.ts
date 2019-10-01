@@ -26,7 +26,9 @@ export class UserComponent extends BaseComponent implements OnInit {
     .subscribe(data => {
       this.router.navigate(['/']);
     }, err => {
-      
+      this.setLogged(false);
+      localStorage.removeItem('currentUser');
+      this.router.navigate(['/']);
     });
   }
 
