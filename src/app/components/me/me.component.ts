@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-me',
@@ -8,14 +9,11 @@ import { BaseComponent } from '../base/base.component';
 })
 export class MeComponent extends BaseComponent implements OnInit {
 
-  private boolTest : boolean;
-
   constructor(injector : Injector) {
     super(injector);
   }
 
   ngOnInit() {
-    this.isLogged.subscribe(v => this.boolTest = v);
   }
 
 }

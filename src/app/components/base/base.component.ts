@@ -41,6 +41,14 @@ export class BaseComponent implements OnInit {
   logout() {
     return this.sessionService.logout();
   }
+
+  forceLogout() {
+    return this.sessionService.forceLogout();
+  }
+
+  ping() {
+    return this.sessionService.ping();
+  }
   
   get Habbo() : BehaviorSubject<User> {
     return this.sessionService.Habbo;

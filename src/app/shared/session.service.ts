@@ -3,6 +3,7 @@ import { User } from '../models/user.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map, first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,12 @@ export class SessionService {
   private clientShow : BehaviorSubject<boolean>;
   private isLogged : BehaviorSubject<boolean>;
 
-  constructor(private http : HttpClient) { 
+  constructor(private http : HttpClient, private router : Router) { 
     this.habbo = new BehaviorSubject<User>(null);
     this.clientShow = new BehaviorSubject<boolean>(false);
     this.isLogged = new BehaviorSubject<boolean>(false);
 
+    
     let currentUser = localStorage.getItem('currentUser');
 
     if(currentUser == null || undefined) {
@@ -26,8 +28,18 @@ export class SessionService {
     }
     else
     {
+      let object = JSON.parse(currentUser);
+      let tempHabbo : User = new User(object.id, object.username, object.mail, object.motto, object.look, object.rank, object.auth_ticket);
+      this.habbo.next(tempHabbo);
 
-      this.ping().subscribe(data => { console.log(data); }, err => { console.log('Error'); });
+      this.ping()
+      .subscribe(
+        data => { 
+          this.isLogged.next(true); 
+        },
+        err => { 
+          this.forceLogout();
+        });
 
       this.isLogged.next(true);
     }
@@ -60,17 +72,21 @@ export class SessionService {
   logout() {
     return this.http.get('http://localhost:3000/api/auth/session/logout', { withCredentials: true })
     .pipe(map(res => {
-      if(localStorage.getItem('currentUser') != null || undefined) {
-        localStorage.removeItem('currentUser');
-        this.isLogged.next(false);
-      }
+      this.forceLogout();
 
       return res;
     }));
   }
 
+  forceLogout() {
+    if(localStorage.getItem('currentUser') != null || undefined) {
+      localStorage.removeItem('currentUser');
+      this.isLogged.next(false);
+    }
+  }
+
   ping() {
-    return this.http.get('http://localhost:3000/api/authentication/session/get', { withCredentials: true });
+    return this.http.get('http://localhost:3000/api/auth/session/get', { withCredentials: true });
   }
 
   showClient() {

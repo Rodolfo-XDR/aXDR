@@ -23,6 +23,7 @@ import { HowToPlayComponent } from './components/how-to-play/how-to-play.compone
 import { WhatIsComponent } from './components/what-is/what-is.component';
 import { HelpComponent } from './components/help/help.component';
 import { ClientComponent } from './components/client/client.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ClientComponent } from './components/client/client.component';
     HowToPlayComponent,
     WhatIsComponent,
     HelpComponent,
-    ClientComponent
+    ClientComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

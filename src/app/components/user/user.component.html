@@ -1,7 +1,9 @@
-<button [routerLink]="['/me']">Home</button>
-<button [routerLink]="['/hotel']">Hotel</button>
-<button [routerLink]="['/community']">Comunidad</button>
-<button (click)="disconnect()" class="button habbo red">Logout</button>
-
-<router-outlet></router-outlet>
-<app-client></app-client>
+<div class="container-fluid arctic-body h-100">
+    <div class="grid mb-0 arctic-grid h-100">
+        <app-header></app-header>
+        <div class="cell p-0 arctic-content">
+            <router-outlet></router-outlet>
+        </div>
+        <app-client></app-client>
+    </div>
+</div>

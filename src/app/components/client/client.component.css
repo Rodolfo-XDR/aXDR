@@ -1,0 +1,9 @@
+.client-container {
+    height: 101%;
+    left: 0;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background-color: #000;
+    z-index: 610;
+}
