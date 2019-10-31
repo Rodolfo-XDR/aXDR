@@ -1,4 +1,11 @@
-/*New Arctic UI!*/
+/*New XDR UI!*/
+.xdr-container {
+  overflow: scroll;
+  flex: 1 1 auto;
+  padding: 5px 10px;
+}
+
+/*OLD ARCTIC UI*/
 .arctic-body {
     flex: 1 1 auto;
     flex-flow: row;

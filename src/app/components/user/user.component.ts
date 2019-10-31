@@ -2,6 +2,7 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { ClientService } from 'src/app/shared/client.service';
 
 @Component({
   selector: 'app-user',
@@ -10,28 +11,14 @@ import { Router } from '@angular/router';
 })
 export class UserComponent extends BaseComponent implements OnInit {
 
-  public clientOpen : boolean;
+  public hideNav : boolean;
   
-  constructor(injector : Injector, private router : Router) {
+  constructor(injector : Injector, private router : Router, private clientService : ClientService) {
     super(injector);
+
+    this.clientService.ClientShow.subscribe(v => this.hideNav = v);
   }
 
   ngOnInit() {
-    this.clientShow.subscribe(v => this.clientOpen = v);
   }
-
-  disconnect() {
-    this.logout()
-    .pipe(first())
-    .subscribe(data => {
-      this.router.navigate(['/']);
-    }, err => {
-      this.setLogged(false);
-      localStorage.removeItem('currentUser');
-      this.router.navigate(['/']);
-    });
-  }
-
-
-
 }
