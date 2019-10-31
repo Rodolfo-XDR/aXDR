@@ -17,7 +17,7 @@ export const APP_ROUTES: Routes = [
         data: {
             title: Routing.GUEST.title
         },
-        canActivateChild: [AuthGuard]
+        canActivateChild: [UnauthGuard]
     },
     { 
         path: Routing.USER.url, 
@@ -27,7 +27,7 @@ export const APP_ROUTES: Routes = [
             hasMenuContent: true,
             title: Routing.USER.title 
         },
-        canActivateChild: [UnauthGuard]
+        canActivateChild: [AuthGuard]
     },
     { 
         path: '**', 

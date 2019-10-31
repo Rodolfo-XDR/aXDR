@@ -13,7 +13,7 @@ export class UserComponent extends BaseComponent implements OnInit {
 
   public hideNav : boolean;
   
-  constructor(injector : Injector, private router : Router, private clientService : ClientService) {
+  constructor(injector : Injector, private clientService : ClientService) {
     super(injector);
 
     this.clientService.ClientShow.subscribe(v => this.hideNav = v);

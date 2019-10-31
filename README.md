@@ -1,5 +1,5 @@
 # ![alt text](https://i.imgur.com/OTtNhTo.png) aXDR CMS 
-##### Version Alpha 1.0.2
+##### Version Alpha 1.1.0
 ##### Mr.Mustache - Arctic Development
 
 ### Getting Started
@@ -21,5 +21,6 @@
 > + All Web Reconstruction in process...
 
 ### Pending Errors:
-+ Irregular Logouts
-+ Refreshing Bugs
++ Irregular Logouts - FIXED
++ Refreshing Bugs - FIXED
++ Duplicate errors - FIXED

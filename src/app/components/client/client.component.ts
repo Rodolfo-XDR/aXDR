@@ -1,6 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
 import { Location } from '@angular/common';
+import { ClientService } from 'src/app/shared/client.service';
 declare var window;
 declare var document;
 
@@ -22,13 +23,13 @@ export class ClientComponent extends BaseComponent implements OnInit {
 
   public clientOpen : boolean;
 
-  constructor(injector : Injector, private location : Location) {
+  constructor(injector : Injector, private location : Location, private clientService : ClientService) {
     super(injector)
-    console.log(this.SWF);
   }
 
   async ngOnInit() {
-    this.clientShow.subscribe(v => this.clientOpen = v);
+
+    this.clientService.ClientShow.subscribe(v => this.clientOpen = v)
 
     try {
       await this.checkFlash();
@@ -68,7 +69,7 @@ export class ClientComponent extends BaseComponent implements OnInit {
       this.loading = true;
       this.done = false;
 
-      this.sso = this.Habbo.value.auth_ticket;
+      //this.sso = this.Habbo.value.auth_ticket;
 
       await this.buildClient();
     }

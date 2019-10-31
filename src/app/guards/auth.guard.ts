@@ -14,19 +14,29 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {     
     
-    if(this.sessionService.IsLogged.value)
+    if(!this.sessionService.IsLogged.value)
     {
-      this.router.navigate([Routing.USER.url + Routing.USER.children.HABBO.directURL]);
+      this.router.navigate(['/']);
       return false;
     }
 
     return true;
   }
+
+  //TODO This is being repeated 2 times...
   canActivateChild(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
-    if(this.sessionService.IsLogged.value)
+    if(localStorage.getItem('currentUser') == undefined)
     {
-      this.router.navigate([Routing.USER.url + Routing.USER.children.HABBO.directURL]);
+      this.sessionService.IsLogged.next(false);
+      this.router.navigate(['/']);
+      return false;
+    }
+
+    this.sessionService.pingStatus();
+      
+    if(!this.sessionService.IsLogged.value)
+    {
+      this.router.navigate(['/']);
       return false;
     }
 

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent extends BaseComponent implements OnInit {
 
-  constructor(injector : Injector, private router : Router) {
+  constructor(injector : Injector) {
     super(injector);
   }
 
@@ -18,15 +18,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   }
 
   disconnect() {
-    this.logout()
-    .pipe(first())
-    .subscribe(data => {
-      this.router.navigate(['/']);
-    }, err => {
-      this.setLogged(false);
-      localStorage.removeItem('currentUser');
-      this.router.navigate(['/']);
-    });
+    this.logout();
   }
 
 }

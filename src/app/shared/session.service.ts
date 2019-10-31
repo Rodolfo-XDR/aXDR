@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { map, first } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { APIService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,94 +10,32 @@ import { Router } from '@angular/router';
 export class SessionService {
 
   private habbo : BehaviorSubject<User>;
-  private clientShow : BehaviorSubject<boolean>;
   private isLogged : BehaviorSubject<boolean>;
+  private session : BehaviorSubject<string>;
 
-  constructor(private http : HttpClient, private router : Router) { 
-    this.habbo = new BehaviorSubject<User>(null);
-    this.clientShow = new BehaviorSubject<boolean>(false);
+  constructor(private router : Router, private apiService : APIService) {
     this.isLogged = new BehaviorSubject<boolean>(false);
+    this.session = new BehaviorSubject<string>(localStorage.getItem('currentUser'));
 
-    
-    let currentUser = localStorage.getItem('currentUser');
-
-    if(currentUser == null || undefined) {
+    if(this.session.value == null || undefined)
       this.isLogged.next(false);
-      return;
-    }
     else
     {
-      let object = JSON.parse(currentUser);
-      let tempHabbo : User = new User(object.id, object.username, object.mail, object.motto, object.look, object.rank, object.auth_ticket);
-      this.habbo.next(tempHabbo);
-
-      this.ping()
-      .subscribe(
-        data => { 
-          this.isLogged.next(true); 
-        },
-        err => { 
-          this.forceLogout();
-        });
-
       this.isLogged.next(true);
     }
   }
 
-  register(username : string, mail : string, password : string) {
-    return this.http.post('http://localhost:3000/api/user/add', { username, mail, password }, { withCredentials: true })
-    .pipe(map(user => {
-      return user;
-    }));
-  }
+  pingStatus() {
+    if(!this.isLogged.value) return;
 
-  login(identification : string, password : string) {
-    //TODO check for login duplicates
-    return this.http.post('http://localhost:3000/api/auth/login', { identification, password }, { withCredentials: true })
-    .pipe(map(user => { 
-
-      if(user) {
-        let tempHabbo : User = new User(user['session']['habbo']['id'], user['session']['habbo']['username'], user['session']['habbo']['mail'], user['session']['habbo']['motto'],user['session']['habbo']['look'], user['session']['habbo']['rank'], user['session']['habbo']['auth_ticket']);
-
-        this.habbo.next(tempHabbo);
-        localStorage.setItem('currentUser', JSON.stringify(user['session']['habbo']));
-        this.isLogged.next(true);
-      }
-
-      return user; 
-    }));
-  }
-
-  logout() {
-    return this.http.get('http://localhost:3000/api/auth/session/logout', { withCredentials: true })
-    .pipe(map(res => {
-      this.forceLogout();
-
-      return res;
-    }));
-  }
-
-  forceLogout() {
-    if(localStorage.getItem('currentUser') != null || undefined) {
-      localStorage.removeItem('currentUser');
-      this.isLogged.next(false);
-    }
-  }
-
-  ping() {
-    return this.http.get('http://localhost:3000/api/auth/session/get', { withCredentials: true });
-  }
-
-  showClient() {
-    this.clientShow.next(true);
-  }
-
-  hideClient() {
-    this.clientShow.next(false);
-  }
-
-  get ClientShow() {
-    return this.clientShow;
+    return this.apiService.get('/auth/session/get')
+    .subscribe(data => {
+      this.isLogged.next(true);
+    }, err => {
+        this.IsLogged.next(false);
+        localStorage.removeItem('currentUser');
+        this.router.navigate(['/']);
+    });
   }
 
   get Habbo() {

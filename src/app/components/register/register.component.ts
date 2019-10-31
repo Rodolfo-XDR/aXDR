@@ -40,7 +40,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
   private isError = false;
   private errorMsg = '';
 
-  constructor(injector : Injector, private router : Router, private location : Location) {
+  constructor(injector : Injector, private location : Location) {
     super(injector);
   }
 
@@ -51,6 +51,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     this.location.back();
   }
 
+  //TODO Improve this void
   addUser(form: NgForm) {
     if(form.value == null || undefined || !form.valid)
     return this.errorHandling('invalid_form');
@@ -73,28 +74,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     if(!this.registrationForm.reCAPTCHA)
       return this.errorHandling('invalid_recaptcha');
   
-    this.register(this.registrationForm.username, this.registrationForm.mail, this.registrationForm.password)
-    .pipe(first())
-    .subscribe(
-      data => {
-          this.login(this.registrationForm.username, this.registrationForm.password)
-          .pipe(first())
-          .subscribe(
-            data => {
-              if(localStorage.getItem('currentUser') == undefined || null)
-                this.errorHandling('invalid_localStorage');
-      
-              this.router.navigate([Routing.USER.url + Routing.USER.children.HABBO.directURL]);
-            }, 
-            error => {
-      
-              if(error.error.message == 'valid_session')
-                this.router.navigate([Routing.USER.url + Routing.USER.children.HABBO.directURL]);
-      
-              this.errorHandling(error.error.message)
-            });
-      },
-      error => this.errorHandling(error.error.message));
+    this.register(this.registrationForm.username, this.registrationForm.mail, this.registrationForm.password);
   }
 
   resolved(captchaResponse) {

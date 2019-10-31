@@ -11,18 +11,18 @@ export class UnauthGuard implements CanActivate, CanActivateChild {
   constructor(private router : Router, private sessionService : SessionService) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {     
-    if(!this.sessionService.IsLogged.value)
+    if(this.sessionService.IsLogged.value)
     {
-      this.router.navigate(['/']);
+      this.router.navigate([Routing.USER.url + Routing.USER.children.HABBO.directURL]);
       return false;
     }
 
     return true;
   }
   canActivateChild(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if(!this.sessionService.IsLogged.value)
+    if(this.sessionService.IsLogged.value)
     {
-      this.router.navigate(['/']);
+      this.router.navigate([Routing.USER.url + Routing.USER.children.HABBO.directURL]);
       return false;
     }
 

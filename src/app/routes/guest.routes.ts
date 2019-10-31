@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { Routing } from 'src/routing';
 import { LoginComponent } from '../components/login/login.component';
 import { RegisterComponent } from '../components/register/register.component';
-import { AuthGuard } from '../guards/auth.guard';
 
 export const GUEST_ROUTES : Routes = [
     { 

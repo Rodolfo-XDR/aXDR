@@ -3,16 +3,16 @@
 @font-face{
 	font-family: 'Ubuntu Light';
 	src: url("./assets/fonts/Ubuntu-Light.ttf") format('truetype');
-}  
+}
 
-html {
-	height: 100%;
-  }
-	
 html, body {
     font-family: 'Ubuntu Light';
     height: 100% !important;
     margin: 0;
+}
+
+body {
+    overflow: hidden;
 }
 
 .arcticSwitch .check::after {

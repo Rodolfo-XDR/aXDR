@@ -1,6 +1,7 @@
 /*New XDR UI!*/
 .xdr-container {
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: none;
   flex: 1 1 auto;
   padding: 5px 10px;
 }

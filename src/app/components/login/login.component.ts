@@ -35,16 +35,14 @@ export class LoginComponent extends BaseComponent implements OnInit {
   private isError = false;
   private errorMsg = '';
 
-  private logStatus : boolean = false;
-
-  constructor(injector : Injector, private router : Router) {
+  constructor(injector : Injector) {
     super(injector);
   }
 
   ngOnInit() {
-    this.isLogged.subscribe(v => this.logStatus = v);
   }
 
+  //TODO Improve this void
   connect(form : NgForm) {
 
     if(form.value == null || undefined || !form.valid)
@@ -58,22 +56,9 @@ export class LoginComponent extends BaseComponent implements OnInit {
     if(this.loginForm.identification == undefined || this.loginForm.password == undefined)
       return this.errorHandling('invalid_form');
 
-    this.login(this.loginForm.identification, this.loginForm.password)
-    .pipe(first())
-    .subscribe(
-      data => {
-        if(localStorage.getItem('currentUser') == undefined || null)
-          this.errorHandling('invalid_localStorage');
-
-        this.router.navigate([Routing.USER.url + Routing.USER.children.HABBO.directURL]);
-      }, 
-      err => {
-
-        if(err.error.message == 'valid_session')
-          this.router.navigate([Routing.USER.url + Routing.USER.children.HABBO.directURL]);
-
-        this.errorHandling(err.error.message)
-      });
+    this.login(this.loginForm.identification, this.loginForm.password).add(data => {
+      console.log(data);
+    });
   }
 
   /*
