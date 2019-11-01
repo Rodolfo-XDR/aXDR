@@ -3,21 +3,21 @@
       <div class="box">
           <div class="title fg-light text-bold">REGISTRO</div>
         <div @bounceInRight class="content">
-          <form #registrationForm="ngForm" (ngSubmit)="addUser(registrationForm)" data-role="validator" action="javascript:" data-interactive-check="true">
+          <form  #registrationForm="ngForm" name="registrationForm" (ngSubmit)="signUp()" data-role="validator" autocomplete="off" action="javascript:" data-interactive-check="true">
             <div class="row">
               <div class="cell">
                 <div @fadeIn *ngIf="isError" class="bg-darkRed fg-white rounded text-small text-bold mb-2 p-2">{{errorMsg}}</div>
                 <div class="form-group p-3">
                   <label class="fg-lightGrayBlue text-bold">Usuario</label>
                   <div class="text-small fg-grayBlue p-2">Escoge tu nombre de usuario para conectarte a Habbo en el futuro. Por favor, usa un usuario válido. Asegúrate de que introduces un nombre no tan largo y no tan corto.</div>
-                  <input class="arctic fg-grayBlue" name="registration.username" #registrationForm.username="ngModel" [(ngModel)]="registrationForm.username" type="text" data-role="input" data-validate="required minlength=3">
+                  <input class="arctic fg-grayBlue" [(ngModel)]="registration.username" name="registration.username" type="text" data-role="input" data-validate="required minlength=3">
                   <span class="invalid_feedback">
                       ¡Oops! Ingresa un usuario válido...
                   </span>
                   <hr>
                   <label class="fg-lightGrayBlue text-bold">Email</label>
                   <div class="text-small fg-grayBlue p-2">Necesitarás usar este email para conectarte a Habbo en el futuro. Por favor, utiliza un email que sea válido.</div>
-                  <input class="arctic fg-grayBlue" name="registration.mail" #registrationForm.mail="ngModel" [(ngModel)]="registrationForm.mail" type="email" data-role="input" data-validate="required email">
+                  <input class="arctic fg-grayBlue" [(ngModel)]="registration.mail" name="registration.email" type="email" data-role="input" data-validate="required email">
                   <span class="invalid_feedback">
                       ¡Oops! Ingresa un e-mail válido...
                   </span>
@@ -30,19 +30,19 @@
                 <div class="form-group bg-dark p-3 rounded">
                   <label class="fg-lightGrayBlue text-bold">Nueva Contraseña</label>
                   <div class="text-small fg-grayBlue p-2">Usa al menos 6 caracteres. Incluye al menos una letra y un número o un caracter especial.</div>
-                  <input class="arctic fg-grayBlue" name="registration.password" #registrationForm.password="ngModel" [(ngModel)]="registrationForm.password" type="password" data-role="input" data-validate="required minlength=6">
+                  <input class="arctic fg-grayBlue" [(ngModel)]="registration.password" name="registration.password" type="password" data-role="input" data-validate="required minlength=6">
                   <span class="invalid_feedback">
                       ¡Oops! Ingresa una contraseña válida...
                   </span>
                   <hr>
                   <label class="fg-lightGrayBlue text-bold">Repite Contraseña</label>
-                  <input class="arctic fg-grayBlue" name="registration.passwordConfirm" #registrationForm.passwordConfirm="ngModel" [(ngModel)]="registrationForm.passwordConfirm" type="password" data-role="input" data-validate="required compare=registration.password">
+                  <input class="arctic fg-grayBlue" [(ngModel)]="registration.passwordConfirm" name="registration.passwordConfirm" type="password" data-role="input" data-validate="required compare=registration.password">
                   <span class="invalid_feedback">
                       ¡Oops! Asegurate que has ingresado la misma contraseña
                   </span>
                 </div>
                 <div class="form-group p-3">
-                  <input type="checkbox" name="registration.tos" #registrationForm.tos="ngModel" [(ngModel)]="registrationForm.tos" data-role="checkbox" data-cls-caption="fg-grayBlue text-bold" data-caption="Acepto los <a href='https://help.habbo.es/hc/es/articles/221679308-T%C3%A9rminos-del-Servicio-y-Pol%C3%ADtica-de-Privacidad'>Términos y Condiciones, la Política de Privacidad y la Política de Cookies</a>">
+                  <input type="checkbox" [(ngModel)]="registration.tos" name="tos" data-role="checkbox" data-cls-caption="fg-grayBlue text-bold" data-caption="Acepto los <a href='https://help.habbo.es/hc/es/articles/221679308-T%C3%A9rminos-del-Servicio-y-Pol%C3%ADtica-de-Privacidad'>Términos y Condiciones, la Política de Privacidad y la Política de Cookies</a>">
                 </div>
                 <div class="form-group">
                   <button class="button habbo">¡Hecho! ¡vamos a crear un Avatar!</button>

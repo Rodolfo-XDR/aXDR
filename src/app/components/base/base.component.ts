@@ -30,7 +30,7 @@ export class BaseComponent implements OnInit {
   }
 
   register(username : string, mail : string, password : string) {
-    this.authService.register(username, mail, password);
+    return this.authService.register(username, mail, password);
   }
 
   login(identification : string, password : string) {

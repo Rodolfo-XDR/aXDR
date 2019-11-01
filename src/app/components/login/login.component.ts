@@ -27,38 +27,33 @@ import { Routing } from 'src/routing';
 })
 export class LoginComponent extends BaseComponent implements OnInit {
 
-  private loginForm = {
+  private credentials = {
     identification: null,
     password: null
-  };
+  }
 
   private isError = false;
   private errorMsg = '';
 
   constructor(injector : Injector) {
     super(injector);
+    
+    this.credentials = {
+      identification: null,
+      password: null
+    }
   }
 
   ngOnInit() {
   }
+  
+  signIn() {
 
-  //TODO Improve this void
-  connect(form : NgForm) {
-
-    if(form.value == null || undefined || !form.valid)
+    if(this.credentials.identification == undefined || this.credentials.password == undefined)
       return this.errorHandling('invalid_form');
 
-    this.loginForm = {
-      identification: form.value["login.identification"],
-      password: form.value["login.password"]
-    }
-
-    if(this.loginForm.identification == undefined || this.loginForm.password == undefined)
-      return this.errorHandling('invalid_form');
-
-    this.login(this.loginForm.identification, this.loginForm.password).add(data => {
-      console.log(data);
-    });
+    this.login(this.credentials.identification, this.credentials.password)
+    .pipe(first()).subscribe(data => {}, error => this.errorHandling(error.error.message));
   }
 
   /*

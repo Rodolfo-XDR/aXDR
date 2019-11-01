@@ -2,18 +2,18 @@
     <div class="cell-4">
         <div class="box">
             <div class="display2 fg-light text-bold">Conéctate.</div>
-            <form  #loginForm="ngForm" (ngSubmit)="connect(loginForm)" data-role="validator" action="javascript:" data-interactive-check="true">
+            <form  #loginForm="ngForm" (ngSubmit)="signIn()" data-role="validator" action="javascript:" data-interactive-check="true">
                   <div *ngIf="isError" class="bg-darkRed fg-white rounded text-small text-bold m-2 p-1">{{errorMsg}}</div>
                   <div class="form-group">
                     <label class="fg-lightGrayBlue text-bold">Usuario</label>
-                    <input class="arctic fg-grayBlue" name="login.identification" #loginForm.identification="ngModel" [(ngModel)]="loginForm.identification" type="text" data-role="input" data-validate="required">
+                    <input class="arctic fg-grayBlue" [(ngModel)]="credentials.identification" name="credentials.identification" type="text" autocomplete="on" data-role="input" data-validate="required">
                     <span class="invalid_feedback">
                         ¡Oops! Ingresa tu usuario correctamente...
                     </span>
                 </div>
                 <div class="form-group">
                     <label class="fg-lightGrayBlue text-bold">Contraseña</label>
-                    <input class="arctic fg-grayBlue" name="login.password" #loginForm.password="ngModel" [(ngModel)]="loginForm.password" type="password" data-role="input" data-validate="required">
+                    <input class="arctic fg-grayBlue" [(ngModel)]="credentials.password" name="credentials.password" type="password" autocomplete="on" data-role="input" data-validate="required">
                     <span class="invalid_feedback">
                         ¡Oops! Ingresa tu contraseña correctamente...
                     </span>

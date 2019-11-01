@@ -28,14 +28,14 @@ import { fadeIn, fadeOut, slideInLeft, slideOutDown, bounceInRight } from 'ng-an
 })
 export class RegisterComponent extends BaseComponent implements OnInit {
 
-  private registrationForm = {
+  private registration = {
     username: null,
     mail: null,
     password: null,
     passwordConfirm: null,
     tos: false,
     reCAPTCHA: false
-  };
+  }
 
   private isError = false;
   private errorMsg = '';
@@ -51,34 +51,22 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     this.location.back();
   }
 
-  //TODO Improve this void
-  addUser(form: NgForm) {
-    if(form.value == null || undefined || !form.valid)
-    return this.errorHandling('invalid_form');
-
-    this.registrationForm = {
-      username: form.value["registration.username"],
-      mail: form.value["registration.mail"],
-      password: form.value["registration.password"],
-      passwordConfirm: form.value["registration.passwordConfirm"],
-      tos: form.value["registration.tos"],
-      reCAPTCHA: this.registrationForm.reCAPTCHA
-    }
-
-    if(this.registrationForm.username == undefined || this.registrationForm.mail == undefined || this.registrationForm.password == undefined || this.registrationForm.passwordConfirm == undefined)
+  signUp() {
+    if(this.registration.username == undefined || this.registration.mail == undefined || this.registration.password == undefined || this.registration.passwordConfirm == undefined)
       return this.errorHandling('invalid_form');
       
-    if(!this.registrationForm.tos || this.registrationForm.tos == undefined)
+    if(!this.registration.tos || this.registration.tos == undefined)
       return this.errorHandling('tos_validation');
 
-    if(!this.registrationForm.reCAPTCHA)
+    if(!this.registration.reCAPTCHA)
       return this.errorHandling('invalid_recaptcha');
   
-    this.register(this.registrationForm.username, this.registrationForm.mail, this.registrationForm.password);
+    this.register(this.registration.username, this.registration.mail, this.registration.password)
+    .pipe(first()).subscribe(data => {}, error => this.errorHandling(error.error.message));
   }
 
   resolved(captchaResponse) {
-    this.registrationForm.reCAPTCHA = true;
+    this.registration.reCAPTCHA = true;
   }
 
   errorHandling(error : String) {

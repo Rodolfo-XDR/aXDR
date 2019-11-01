@@ -16,22 +16,20 @@ export class AuthenticationService {
   login(identification, password) 
   {
     return this.apiService.post('/auth/login', {identification, password })
-    .subscribe(res => {
-      if(res.session == undefined || null) return new Error('invalid_session');
-
+    .pipe(map(res => {
       localStorage.setItem('currentUser', JSON.stringify(res.session.habbo));
       this.sessionService.IsLogged.next(true);
       this.router.navigate(['/me']);
-      return true;
-    }, err => { return false; });
+      return res;
+    }));
   }
 
   register(username, mail, password)
   {
     return this.apiService.post('/user/add', {username, mail, password})
-    .subscribe(res => {
-      this.login(username, password);
-    });
+    .pipe(map(res => {
+      this.login(username, password).pipe(first()).subscribe();
+    }))
   }
 
   logout()
