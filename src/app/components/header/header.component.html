@@ -1,22 +1,4 @@
-<div class="">
-    <div class="grid mb-0">
-        <div class="row arctic-header py-2">
-                <div class="cell-auto arctic-logo px-3">
-                    <img src="../../../assets/images/habbologo_blackR.gif" alt="">
-                </div>
-                <div class="cell arctic-cell-menu">
-                    <ul class="h-menu arctic-menu">
-                        <li><a [routerLink]="['/me']">Home</a></li> 
-                        <li><a [routerLink]="['/community']">Comunidad</a></li> 
-                    </ul>
-                </div>
-                <div class="cell-2">
-                    <button (click)="disconnect()" class="button habbo red">Salir</button>
-                </div>
-        </div>
-    </div>
-</div>
-<!--<div class="container-fluid pl-0 pr-0">
+<div [ngClass]="{'d-none' : clientShow.value}">
     <div class="grid mb-0">
         <div class="row arctic-header py-2">
             <div class="cell-auto arctic-logo px-3">
@@ -24,8 +6,7 @@
             </div>
             <div class="cell arctic-cell-menu">
                 <ul class="h-menu arctic-menu">
-                    <li><a [routerLink]="['/me']">Home</a></li>   
-                    <li><a [routerLink]="['/hotel']">Hotel</a></li>   
+                    <li><a [routerLink]="['/me']">Home</a></li> 
                     <li><a [routerLink]="['/community']">Comunidad</a></li> 
                 </ul>
             </div>
@@ -43,4 +24,4 @@
             </div>
         </div>
     </div>
-</div>-->
+</div>

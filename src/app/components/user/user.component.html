@@ -1,9 +1,11 @@
 <div class="container-fluid p-0 h-100">
-    <app-header *ngIf="!hideNav"></app-header>
+    <app-header></app-header>
     <div class="d-flex h-100">
         <div class="xdr-container radial">
             <app-side></app-side>
-            <router-outlet></router-outlet>
+            <div class="xdr-pageContent">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
     <app-client></app-client>

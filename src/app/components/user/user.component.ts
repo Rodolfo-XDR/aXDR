@@ -8,18 +8,12 @@ import { stringify } from 'querystring';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent extends BaseComponent implements OnInit, AfterViewChecked {
-  public hideNav : boolean;
+export class UserComponent extends BaseComponent implements OnInit {
 
   constructor(injector : Injector) {
     super(injector);
   }
 
   ngOnInit() {
-    this.clientShow.subscribe(v => this.hideNav = v);
-  }
-
-
-  ngAfterViewChecked(): void {
   }
 }

@@ -7,6 +7,10 @@
   flex-flow: row;
 }
 
+.xdr-pageContent {
+  flex: 1 1 auto;
+}
+
 .xdr-container.default {
   background: #1a2980;
   background: -webkit-linear-gradient(to top, #26d0ce, #1a2980);
