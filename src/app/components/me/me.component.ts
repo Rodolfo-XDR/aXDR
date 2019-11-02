@@ -1,6 +1,5 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
-import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-me',

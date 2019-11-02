@@ -23,7 +23,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     return true;
   }
 
-  //TODO This is being repeated 2 times...
   canActivateChild(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if(localStorage.getItem('currentUser') == undefined)
     {

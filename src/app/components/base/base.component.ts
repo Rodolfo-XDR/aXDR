@@ -2,11 +2,11 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SessionService } from 'src/app/shared/session.service';
 import { BehaviorSubject } from 'rxjs';
-import { first } from 'rxjs/operators';
-import { User } from 'src/app/models/user.model';
 import { APIService } from 'src/app/shared/api.service';
-import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/shared/authentication.service';
+import { ClientService } from 'src/app/shared/client.service';
+import { HabboService } from 'src/app/shared/habbo.service';
+import { Habbo } from 'src/app/models/habbo.model';
 
 @Component({
   selector: '',
@@ -14,19 +14,20 @@ import { AuthenticationService } from 'src/app/shared/authentication.service';
   styleUrls: [],
   providers: [HttpClient]
 })
-export class BaseComponent implements OnInit {
+export class BaseComponent {
 
   private sessionService : SessionService;
   private apiService : APIService;
-  private authService : AuthenticationService
+  private authService : AuthenticationService;
+  private clientService : ClientService;
+  private habboService : HabboService;
 
   constructor(private injector : Injector) {
     this.sessionService = this.injector.get(SessionService);
     this.apiService = this.injector.get(APIService);
     this.authService = this.injector.get(AuthenticationService);
-  }
-
-  ngOnInit() {
+    this.clientService = this.injector.get(ClientService);
+    this.habboService = this.injector.get(HabboService);
   }
 
   register(username : string, mail : string, password : string) {
@@ -47,5 +48,17 @@ export class BaseComponent implements OnInit {
 
   setLogged(value : boolean) : void {
     this.sessionService.IsLogged.next(value);
+  }
+
+  get clientShow() {
+    return this.clientService.ClientShow;
+  }
+
+  setClientShow(value : boolean) {
+    this.clientService.ClientShow.next(value);
+  }
+
+  get Habbo() : Habbo {
+    return this.habboService.Habbo;
   }
 }

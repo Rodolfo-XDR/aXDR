@@ -1,0 +1,29 @@
+<div class="xdr-side">
+    <div class="row">
+        <div class="cell">
+            <div class="box">
+                <div class="sideHeader m-0 fg-light">{{ myHabbo.username }} <span id="status" class="online"></span></div>
+                <div class="user-data">
+                    <div class="avatar">
+                        <img src="https://habbo.com.tr/habbo-imaging/avatarimage?figure={{myHabbo.look}}&size=l&action=wlk,wav&direction=2&head_direction=1&gesture=sml" />
+                    </div>
+                    <div class="information fg-light">
+                        <div class="last-login">
+                            <b>Última Conexión:</b> {{ myHabbo.ParseUnixTime(myHabbo.last_login) }}
+                        </div>
+                        <div class="join-date">
+                            <b>Cread@:</b> {{ myHabbo.account_created }}
+                        </div>
+                        <a routerLink="/hotel" class="button habbo m-1 text-upper text-bold">Jugar Ahora <span class="flashy-arrow"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="title m-0 fg-light"><span class="groups"></span> Placas & Grupos</div>
+                <div class="content fg-grayBlue">
+                    No Badges Available
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

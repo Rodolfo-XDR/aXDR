@@ -1,7 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
 import { Location } from '@angular/common';
-import { ClientService } from 'src/app/shared/client.service';
 declare var window;
 declare var document;
 
@@ -23,13 +22,13 @@ export class ClientComponent extends BaseComponent implements OnInit {
 
   public clientOpen : boolean;
 
-  constructor(injector : Injector, private location : Location, private clientService : ClientService) {
+  constructor(injector : Injector, private location : Location) {
     super(injector)
   }
 
   async ngOnInit() {
 
-    this.clientService.ClientShow.subscribe(v => this.clientOpen = v)
+    this.clientShow.subscribe(v => this.clientOpen = v)
 
     try {
       await this.checkFlash();

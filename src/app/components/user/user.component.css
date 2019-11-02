@@ -1,9 +1,27 @@
 /*New XDR UI!*/
 .xdr-container {
   overflow-y: scroll;
-  overflow-x: none;
+  overflow-x: hidden;
   flex: 1 1 auto;
-  padding: 5px 10px;
+  display: flex;
+  flex-flow: row;
+}
+
+.xdr-container.default {
+  background: #1a2980;
+  background: -webkit-linear-gradient(to top, #26d0ce, #1a2980);
+  background: linear-gradient(to top, #26d0ce, #1a2980);
+}
+
+.xdr-container.radial {
+  background: #070d19;
+  background: radial-gradient(circle at center, #00528c, #070d19);
+}
+
+.xdr-container.nite {
+  background: #232325;
+  background: -webkit-linear-gradient(to top, #000621, #232325);
+  background: linear-gradient(to top, #000e4c, #232325);
 }
 
 /*OLD ARCTIC UI*/
@@ -55,21 +73,4 @@
   
   .arctic-content {
     overflow: auto;
-  }
-  
-  app-side {
-    background: #afafaf;
-    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.7);
-    flex: 0 0 350px;
-    display: flex;
-    flex-flow: column;
-    z-index: 0;
-  }
-  
-  app-side.darken {
-    background: #080808;
-  }
-  
-  app-side.skyBlue {
-    background: #64c5ff;;
   }

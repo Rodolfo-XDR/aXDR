@@ -1,21 +1,10 @@
-
 <div class="container-fluid p-0 h-100">
     <app-header *ngIf="!hideNav"></app-header>
     <div class="d-flex h-100">
-        <div class="xdr-container">
-            {{ hideNav }}
+        <div class="xdr-container radial">
+            <app-side></app-side>
             <router-outlet></router-outlet>
         </div>
     </div>
     <app-client></app-client>
 </div>
-
-<!--<div class="container-fluid arctic-body h-100">
-    <div class="grid mb-0 arctic-grid h-100">
-        <app-header *ngIf="!hideNav"></app-header>
-        <div class="cell p-0 arctic-content">
-            <router-outlet></router-outlet>
-        </div>
-        <app-client></app-client>
-    </div>
-</div>-->

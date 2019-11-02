@@ -1,0 +1,118 @@
+.xdr-side {
+    background: #080808;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.7);
+    height: 100%;
+    overflow: scroll;
+    width: 350px;
+}
+
+.sideHeader {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 0px 0px rgba(66, 66, 66, 0.3);
+    font-family: Ubuntu Light;
+    font-weight: bold;
+    font-size: 18pt;
+    padding: 4px 0;
+    text-indent: 25px;
+}
+
+.user-data {
+    display: flex;
+}
+
+.avatar {
+    background: url(../../../assets/images/ui-assets.png);
+    width: 115px;
+    height: 115px;
+    overflow: hidden;
+    background-position: -20px -164px;
+    border-radius: 248px;
+    display: block;
+}
+
+.avatar img {
+    position: relative;
+    top: -20px;
+    left: -12px;
+}
+
+.information {
+    flex: 0 0 180px;
+    display: flex;
+    flex-flow: column;
+}
+
+.motto {
+    font-size: 11pt;
+    color: rgba(255, 255, 255, 0.2);
+    margin: 4px 0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.last-login {
+    font-size: 9pt;
+    margin: 4px 0;
+}
+
+.join-date {
+    font-size: 9pt;
+    margin: 4px 0;
+}
+
+span {
+    display: -webkit-inline-box;
+}
+  
+span#status {
+    margin: 5px 15px;
+    float:right;
+}
+
+span#status.online {
+    background: url(../../../assets/images/online.gif) center center no-repeat;
+    height: 17px;
+    width: 40px;
+}
+
+span#status.offline {
+    background: url(../../../assets/images/offline.gif) center center no-repeat;
+    height: 17px;
+    width: 40px;
+}
+
+span.flashy-arrow {
+    background: url(../../../assets/images/flashy_arrow.gif) no-repeat;
+    height: 9px;
+    width: 17px;
+}
+
+span.groups {
+    background: url(../../../assets/images/ui-assets.png);
+    height: 16px;
+    width: 22px;
+    background-position: 77px 803px;
+}
+
+span.friends {
+    background: url(../../../assets/images/ui-assets.png);
+    height: 16px;
+    width: 22px;
+    background-position: 117px 496px;
+}
+  
+span.online {
+    background: url(../../../assets/images/ui-assets.png);
+    height: 20px;
+    width: 22px;
+    margin: 0px 4px -5px;
+    background-position: 120px 392px;
+}
+  
+span.offline {
+    background: url(../../../assets/images/ui-assets.png);
+    height: 20px;
+    width: 22px;
+    margin: 0px 4px -5px;
+    background-position: 119px 417px;
+}

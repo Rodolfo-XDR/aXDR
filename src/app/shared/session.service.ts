@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { APIService } from './api.service';
@@ -8,8 +7,6 @@ import { APIService } from './api.service';
   providedIn: 'root'
 })
 export class SessionService {
-
-  private habbo : BehaviorSubject<User>;
   private isLogged : BehaviorSubject<boolean>;
   private session : BehaviorSubject<string>;
 
@@ -36,10 +33,6 @@ export class SessionService {
         localStorage.removeItem('currentUser');
         this.router.navigate(['/']);
     });
-  }
-
-  get Habbo() {
-    return this.habbo;
   }
 
   get IsLogged() {

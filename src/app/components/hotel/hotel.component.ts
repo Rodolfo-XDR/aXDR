@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy, Injector } from '@angular/core';
 import { extend } from 'webdriver-js-extender';
 import { BaseComponent } from '../base/base.component';
-import { ClientService } from 'src/app/shared/client.service';
 
 @Component({
   selector: 'app-hotel',
@@ -10,15 +9,17 @@ import { ClientService } from 'src/app/shared/client.service';
 })
 export class HotelComponent extends BaseComponent implements OnInit, OnDestroy {
 
-  constructor(injector : Injector, private clientService : ClientService) { 
+  //TODO Fix this "ExpressionChangedAfterItHasBeenCheckedError" error coming, when opening the Hotel view
+
+  constructor(injector : Injector) { 
     super(injector);
   }
 
   ngOnInit() {
-    this.clientService.ClientShow.next(true);
+    this.clientShow.next(true);
   }
 
   ngOnDestroy() {
-    this.clientService.ClientShow.next(false);
+    this.clientShow.next(false);
   }
 }
