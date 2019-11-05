@@ -25,6 +25,7 @@ import { HelpComponent } from './components/help/help.component';
 import { ClientComponent } from './components/client/client.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SideComponent } from './components/side/side.component';
+import { TeamComponent } from './components/team/team.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { SideComponent } from './components/side/side.component';
     HelpComponent,
     ClientComponent,
     HeaderComponent,
-    SideComponent
+    SideComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

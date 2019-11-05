@@ -1,6 +1,6 @@
 <div [ngClass]="{'d-none' : clientShow.value}">
     <div class="grid mb-0">
-        <div class="row arctic-header py-2">
+        <div class="row arctic-header {{ Habbo.settings.web_header }} py-2">
             <div class="cell-auto arctic-logo px-3">
                 <img src="../../../assets/images/habbologo_blackR.gif" alt="">
             </div>
@@ -14,12 +14,13 @@
                 <button (click)="disconnect()" class="button habbo red">Salir</button>
             </div>
         </div>
-        <div class="row arctic-subHeader py-2">
+        <div class="row arctic-subHeader {{ Habbo.settings.web_header }} py-2">
             <div class="cell">
                 <ul class="h-menu arctic-subMenu">
                     <li><a [routerLink]="['/me']">Home</a></li>   
-                    <li><a [routerLink]="['/hotel']">Hotel</a></li>   
+                    <li><a [routerLink]="['/community/team']">Team</a></li>   
                     <li><a [routerLink]="['/community']">Comunidad</a></li> 
+                    <li><a [routerLink]="['/settings']">Ajustes</a></li> 
                 </ul>
             </div>
         </div>

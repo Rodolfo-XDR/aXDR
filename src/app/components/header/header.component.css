@@ -7,12 +7,44 @@
     z-index: 2;
   }
   
+  .arctic-header.default {
+    background: #001629;
+    background: -webkit-linear-gradient(to bottom, #003f75, #001629);
+    background: linear-gradient(to bottom, #003f75, #001629);
+  }
+
   .arctic-header.darken {
-    background: #1f1f1f;
+    background: linear-gradient(to bottom, #333333, #020202);
+  }
+
+  .arctic-header.cold {
+    background: #131313;
+    background: linear-gradient(to bottom, #353535, #131313);
+  }
+
+  .arctic-header.crush {
+    background: #b5541b;
+    background: linear-gradient(to bottom, #f17307, #b5541b);
   }
   
   .arctic-subHeader {
     background: #171717;  
+  }
+
+  .arctic-subHeader.default {
+    background: #171717;
+  }
+
+  .arctic-subHeader.darken {
+    background: #101010;
+  }
+
+  .arctic-subHeader.cold {
+    background: #1f4771;
+  }
+
+  .arctic-subHeader.crush {
+    background: #212121;
   }
   
   .arctic-logo {

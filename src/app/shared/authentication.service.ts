@@ -21,7 +21,7 @@ export class AuthenticationService {
     .pipe(map(res => {
       localStorage.setItem('currentUser', JSON.stringify(res.session.habbo));
       let tempHabbo = JSON.parse(localStorage.getItem('currentUser'));
-      this.habboService.setHabbo(new Habbo(tempHabbo.id, tempHabbo.username, tempHabbo.mail, tempHabbo.motto, tempHabbo.look, tempHabbo.account_created, tempHabbo.rank, tempHabbo.auth_ticket, tempHabbo.last_online, tempHabbo.last_login));
+      this.habboService.setHabbo(new Habbo(tempHabbo));
       this.sessionService.IsLogged.next(true);
       this.router.navigate(['/me']);
       return res;

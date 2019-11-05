@@ -1,4 +1,5 @@
 import { last } from 'rxjs/operators';
+import { HabboSettings } from './habboSettings.model';
 
 export class Habbo
 {
@@ -13,20 +14,25 @@ export class Habbo
     web_bg : string;
     last_online : number;
     last_login : number;
+    settings : HabboSettings;
 
-    constructor(id = 0, username = '', email = '', motto = '', look = '', account_created = 0, rank = 1, auth_ticket = '', last_online = 0, last_login = 0)
+    constructor(set : any)
     {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.motto = motto;
-        this.look = look;
-        this.account_created = new Date(account_created * 1000).toLocaleString('es-ES', {day: 'numeric', month: 'long', year: 'numeric'});
-        this.rank = rank;
-        this.auth_ticket = auth_ticket;
-        this.web_bg = '';
-        this.last_online = last_online;
-        this.last_login = last_login;
+        this.id = set.id;
+        this.username = set.username;
+        this.email = set.mail;
+        this.motto = set.motto;
+        this.look = set.look;
+        this.account_created = new Date(set.account_created * 1000).toLocaleString('es-ES', {day: 'numeric', month: 'long', year: 'numeric'});
+        this.rank = set.rank;
+        this.auth_ticket = set.auth_ticket;
+        this.last_online = set.last_online;
+        this.last_login = set.last_login;
+        this.settings = new HabboSettings(set.settings);
+    }
+
+    updateLocalStorage() {
+        localStorage.setItem("currentUser", JSON.stringify(this));
     }
 
     ParseUnixTime(value : number) : string {

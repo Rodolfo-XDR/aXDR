@@ -94,6 +94,34 @@ span.groups {
     background-position: 77px 803px;
 }
 
+span.currency {
+    background: url(../../../assets/images/ui-assets.png);
+    height: 31px;
+    width: 44px;
+    background-position: 227px 396px;
+}
+
+span.credits {
+    background: url(../../../assets/images/ui-assets.png);
+    height: 17px;
+    width: 15px;
+    background-position: 47px 402px;
+}
+
+span.duckets {
+    background: url(../../../assets/images/ui-assets.png);
+    height: 17px;
+    width: 15px;
+    background-position: 50px 869px;
+}
+
+span.diamonds {
+    background: url(../../../assets/images/ui-assets.png);
+    height: 17px;
+    width: 15px;
+    background-position: 52px 814px;
+}
+
 span.friends {
     background: url(../../../assets/images/ui-assets.png);
     height: 16px;

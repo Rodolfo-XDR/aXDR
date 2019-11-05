@@ -9,8 +9,6 @@ import { BaseComponent } from '../base/base.component';
 })
 export class HotelComponent extends BaseComponent implements OnInit, OnDestroy {
 
-  //TODO Fix this "ExpressionChangedAfterItHasBeenCheckedError" error coming, when opening the Hotel view
-
   constructor(injector : Injector) { 
     super(injector);
   }

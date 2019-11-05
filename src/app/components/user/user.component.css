@@ -9,23 +9,31 @@
 
 .xdr-pageContent {
   flex: 1 1 auto;
+  padding: 10px 20px;
 }
 
 .xdr-container.default {
   background: #1a2980;
   background: -webkit-linear-gradient(to top, #26d0ce, #1a2980);
   background: linear-gradient(to top, #26d0ce, #1a2980);
+  color: #ffffff;
 }
 
-.xdr-container.radial {
-  background: #070d19;
-  background: radial-gradient(circle at center, #00528c, #070d19);
-}
-
-.xdr-container.nite {
+.xdr-container.dark {
   background: #232325;
   background: -webkit-linear-gradient(to top, #000621, #232325);
   background: linear-gradient(to top, #000e4c, #232325);
+  color: #ffffff;
+}
+
+.xdr-container.light {
+  background: #9edbff;
+  background: linear-gradient(to top, #62beff, #9edbff);
+  color: #212121;
+}
+
+.xdr-container.habbo {
+  background: url('../../../assets/images/habbo_bg.png');
 }
 
 /*OLD ARCTIC UI*/

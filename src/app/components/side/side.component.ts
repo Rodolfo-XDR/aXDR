@@ -9,11 +9,8 @@ import { Habbo } from 'src/app/models/habbo.model';
 })
 export class SideComponent extends BaseComponent implements OnInit {
 
-  private myHabbo : Habbo;
-
   constructor(injector : Injector) {
     super(injector);
-    this.myHabbo = this.Habbo;
   }
 
   ngOnInit() {

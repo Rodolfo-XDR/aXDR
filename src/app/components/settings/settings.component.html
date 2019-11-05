@@ -1,1 +1,32 @@
-<p>settings works!</p>
+<div>
+    <div class="row">
+        <div class="col">
+            <form action="">
+                <h6><b>VISIBILIDAD DE PERFIL</b></h6>
+                <div class="row mb-2">
+                    <div class="cell-sm-4">Permitir a otros usuarios ver tu perfil</div>
+                    <div class="cell-sm-2">
+                        <input name="visibility" [(ngModel)]="visibility" (change)="checkValue(visibility?'A':'B')" type="checkbox" data-role="switch" data-cls-switch="arcticSwitch" data-cls-check="bd-green">
+                    </div>
+                </div>
+                <h6><b>WEB</b></h6>
+                <div class="row mb-2">
+                    <div class="cell-sm-4">Elige tu propio estilo de fondo</div>
+                    <div class="cell-sm-4">
+                        <select class="arctic" name="background" [(ngModel)]="background" (change)="changeBackground(background)" data-role="select" data-filter="false">
+                            <option *ngFor="let option of bgOptions" [value]="option" selected>{{ option }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="cell-sm-4">Elige tu propio estilo de encabezado</div>
+                    <div class="cell-sm-4">
+                        <select class="arctic" name="header" [(ngModel)]="header" (change)="changeHeader(header)" data-role="select" data-filter="false">
+                            <option *ngFor="let option of headerOptions" [value]="option" selected>{{ option }}</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
