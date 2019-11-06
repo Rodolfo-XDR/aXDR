@@ -8,6 +8,9 @@ export class Habbo
     email: string;
     motto: string;
     look: string;
+    credits : number;
+    diamonds : number;
+    duckets : number;
     account_created : string;
     rank: number;
     auth_ticket : string;
@@ -23,6 +26,9 @@ export class Habbo
         this.email = set.mail;
         this.motto = set.motto;
         this.look = set.look;
+        this.credits = set.credits;
+        this.diamonds = set.diamonds;
+        this.duckets = set.duckets;
         this.account_created = new Date(set.account_created * 1000).toLocaleString('es-ES', {day: 'numeric', month: 'long', year: 'numeric'});
         this.rank = set.rank;
         this.auth_ticket = set.auth_ticket;

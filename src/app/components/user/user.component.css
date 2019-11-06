@@ -1,7 +1,6 @@
 /*New XDR UI!*/
 .xdr-container {
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
   flex: 1 1 auto;
   display: flex;
   flex-flow: row;
@@ -10,6 +9,8 @@
 .xdr-pageContent {
   flex: 1 1 auto;
   padding: 10px 20px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .xdr-container.default {
