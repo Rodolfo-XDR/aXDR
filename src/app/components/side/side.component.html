@@ -9,7 +9,7 @@
                     </div>
                     <div class="information fg-light">
                         <div class="last-login">
-                            <b>Última Conexión:</b> {{ Habbo.ParseUnixTime(Habbo.last_login) }}
+                            <b>Última Conexión:</b> {{ Habbo.ParseUnixTime(Habbo.last_online) }}
                         </div>
                         <div class="join-date">
                             <b>Cread@:</b> {{ Habbo.account_created }}
@@ -22,15 +22,15 @@
                 <div class="title m-0 fg-light"><span class="currency"></span> Monedero</div>
                 <div class="content fg-grayBlue">
                     <div class="row">
-                        <div class="cell-1"><span class="credits"></span></div>
+                        <div class="cell-2"><span class="credits"></span></div>
                         <div class="cell"><b>{{ Habbo.credits }}</b> Créditos</div>
                     </div>
                     <div class="row">
-                        <div class="cell-1"><span class="duckets"></span></div>
+                        <div class="cell-2"><span class="duckets"></span></div>
                         <div class="cell"><b>{{ Habbo.diamonds }}</b> Pixeles</div>
                     </div>
                     <div class="row">
-                        <div class="cell-1"><span class="diamonds"></span></div>
+                        <div class="cell-2"><span class="diamonds"></span></div>
                         <div class="cell"><b>{{ Habbo.duckets }}</b> Diamantes</div>
                     </div>
                 </div>

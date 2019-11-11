@@ -9,11 +9,12 @@
                         <input name="visibility" [(ngModel)]="visibility" (change)="checkValue(visibility?'A':'B')" type="checkbox" data-role="switch" data-cls-switch="arcticSwitch" data-cls-check="bd-green">
                     </div>
                 </div>
+                {{Habbo.settings.web_background}}
                 <h6><b>WEB</b></h6>
                 <div class="row mb-2">
                     <div class="cell-sm-4">Elige tu propio estilo de fondo</div>
                     <div class="cell-sm-4">
-                        <select class="arctic" name="background" [(ngModel)]="background" (change)="changeBackground(background)" data-role="select" data-filter="false">
+                        <select class="arctic" name="settings.web_background" [(ngModel)]="settings.web_background" (change)="changeBackground(settings.web_background)" data-role="select" data-filter="false">
                             <option *ngFor="let option of bgOptions" [value]="option" selected>{{ option }}</option>
                         </select>
                     </div>
@@ -21,7 +22,7 @@
                 <div class="row mb-2">
                     <div class="cell-sm-4">Elige tu propio estilo de encabezado</div>
                     <div class="cell-sm-4">
-                        <select class="arctic" name="header" [(ngModel)]="header" (change)="changeHeader(header)" data-role="select" data-filter="false">
+                        <select class="arctic" name="settings.web_header" [(ngModel)]="settings.web_header" (change)="changeHeader(settings.web_header)" data-role="select" data-filter="false">
                             <option *ngFor="let option of headerOptions" [value]="option" selected>{{ option }}</option>
                         </select>
                     </div>

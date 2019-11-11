@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
+declare var Metro;
 
 @Component({
   selector: 'app-settings',
@@ -8,8 +9,10 @@ import { BaseComponent } from '../base/base.component';
 })
 export class SettingsComponent extends BaseComponent implements OnInit {
 
-  private background;
-  private header;
+  private settings = {
+    web_background: null,
+    web_header: null   
+  }
 
   private bgOptions = [ 'default', 'dark', 'light', 'habbo' ];
   private headerOptions = [ 'default', 'darken', 'cold', 'crush' ];
@@ -17,8 +20,8 @@ export class SettingsComponent extends BaseComponent implements OnInit {
   constructor(injector : Injector) {
     super(injector);
 
-    this.background = this.Habbo.settings.web_background;
-    this.header = this.Habbo.settings.web_header;
+    this.settings.web_background = this.Habbo.settings.web_background;
+    this.settings.web_header = this.Habbo.settings.web_header;
   }
 
   ngOnInit() {
@@ -28,18 +31,27 @@ export class SettingsComponent extends BaseComponent implements OnInit {
     console.log(event);
  }
  
- //TODO Call this to UPDATE Database
   changeBackground(event: any) {
-    this.background = event;
-    this.Habbo.settings.updateBackground(event);
-    this.Habbo.updateLocalStorage();
+
+    if(event == this.Habbo.settings.web_background) return;
+
+    this.settings.web_background = event;
+    this.updateHabboSettings({'data': this.settings}).subscribe(data => {
+      this.Habbo.settings.updateBackground(this.settings.web_background);
+      this.Habbo.updateLocalStorage();
+      Metro.notify.create("Tus ajustes se han guardado correctamente.", "¡Con éxito!", { cls: "success" });
+    },err => {});
   }
 
-  //TODO Call this to UPDATE Database
   changeHeader(event: any) {
-    this.header = event;
-    this.Habbo.settings.updateHeader(event);
-    this.Habbo.updateLocalStorage();
-  }
 
+    if(event == this.Habbo.settings.web_header) return;
+
+    this.settings.web_header = event;
+    this.updateHabboSettings({'data': this.settings}).subscribe(data => {
+      this.Habbo.settings.updateHeader(this.settings.web_header);
+      this.Habbo.updateLocalStorage();
+      Metro.notify.create("Tus ajustes se han guardado correctamente.", "¡Con éxito!", { cls: "success" });
+    },err => {});
+  }
 }

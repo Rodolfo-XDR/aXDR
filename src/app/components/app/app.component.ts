@@ -1,4 +1,5 @@
 import { Component, Injector } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component, Injector } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor() {}
+  title = "Habbo"
+  constructor(titleService : Title) {
+    titleService.setTitle(this.title);
+  }
 }

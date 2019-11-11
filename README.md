@@ -1,5 +1,5 @@
 # ![alt text](https://i.imgur.com/OTtNhTo.png) aXDR CMS 
-##### Version Alpha 1.1.5
+##### Version Alpha 2.3.0
 ##### Rodolfo Contreras (Mr.M) - Arctic Development
 
 ### Getting Started
@@ -21,10 +21,23 @@
 > + All Web Reconstruction (10-15-2019)
 > + Http requests improvements (10-26-2019)
 > + Better structure with Services (10-26-2019)
-> + Better Session Handling (10-30-2019) 
+> + Better Session Handling (10-30-2019)
+> + Improved Heights in WEB CSS (11-2-2019)
+> + Ban Checks (11-10-2019)
 
-### Pending:
-+ Irregular Logouts - FIXED
-+ Refreshing Bugs - FIXED
-+ Duplicate errors - FIXED
+### Pending to terminate ALPHA VERSION:
+TODO Sistema de Menú (Ya lo tengo hecho pero me da mucha flojera hacerlo implementarlo de nuevo) pero ya es hora de implementarlo
+TODO Página de Tops
+TODO Página de Comunidad
+TODO Página de Noticias
+TODO Página Staff - 80%
+
+### BETA VERSION:
+> + Administrator Control Panel INTRODUCTION!
+> + Profile Pages INTRODUCTIOPN!
+> + Global Configuration FILE
+> + SOCKETS INTRODUCTION!
+
+
+### FUTURE FEATURES:
 + MultiLanguage

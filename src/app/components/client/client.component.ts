@@ -68,7 +68,7 @@ export class ClientComponent extends BaseComponent implements OnInit {
       this.loading = true;
       this.done = false;
 
-      //this.sso = this.Habbo.value.auth_ticket;
+      this.sso = this.Habbo.auth_ticket;
 
       await this.buildClient();
     }
@@ -161,6 +161,7 @@ export class ClientComponent extends BaseComponent implements OnInit {
   }
 
   goBack() {
+    //TODO Check if this.location is '/hotel' if yes, then return to default '/me'
     this.location.back();
   }
 

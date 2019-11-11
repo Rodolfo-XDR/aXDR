@@ -142,6 +142,7 @@ hr {
 .box > .content {
     font-size: 10pt;
     padding: 10px;
+    display: inline-block;
 }
 
 .button.habbo {

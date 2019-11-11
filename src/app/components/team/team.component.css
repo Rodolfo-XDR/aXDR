@@ -1,0 +1,53 @@
+.rank {
+}
+
+.rank > .title {
+    font-size: 20pt;
+}
+
+.staff {
+    width: 260px;
+    float: left;
+    margin: 5px 15px;
+}
+
+.avatar {
+    overflow: hidden;
+    height: 135px;
+}
+
+.information {
+    background: #151515;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+#username {
+    color: #008df1;
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+#last_login {
+    font-size: 8pt;
+    color: rgba(255, 255, 255, 0.18);
+}
+
+span.status {
+    background: url('../../../assets/images/ui-assets.png');
+    display: block;
+    float: right;
+}
+
+span.status#online {
+    background-position: 150px 300px;
+    height: 32px;
+    width: 27px;
+}
+
+span.status#offline {
+    background-position: 60px 662px;
+    height: 28px;
+    width: 22px;
+}

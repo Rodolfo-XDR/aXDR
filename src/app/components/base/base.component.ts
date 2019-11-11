@@ -61,4 +61,12 @@ export class BaseComponent {
   get Habbo() : Habbo {
     return this.habboService.Habbo;
   }
+
+  updateHabboSettings(data) {
+    return this.habboService.updateHabboSettings(data);
+  }
+
+  getStaff() {
+    return this.habboService.Staff;
+  }
 }

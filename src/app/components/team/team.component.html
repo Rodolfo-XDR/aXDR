@@ -1,24 +1,29 @@
 <div>
     <div class="row">
         <div class="cell">
-            <div class="box">
-                <div class="title">Fundadores</div>
-                <div class="content">Mi nombre es {{ Habbo.username }}</div>
-            </div>
-            <div class="box">
-                <div class="title">CEO</div>
-                <div class="content"></div>
-            </div>
-            <div class="box">
-                <div class="title">Administradores</div>
-                <div class="content"></div>
-            </div>
-            <div class="box">
-                <div class="title">Moderadores</div>
-                <div class="content"></div>
+            <div class="box rank" *ngFor="let rank of ranks">
+                <div class="title">
+                    <span></span>
+                    {{rank.name}}
+                </div>
+                <div class="content">
+                    <div class="staff" *ngFor="let user of rank.users">
+                        <div class="avatar">
+                            <img src="https://habbo.com.tr/habbo-imaging/avatarimage?figure={{user.look}}&size=l&action=&direction=2&head_direction=2&gesture=sml" alt="">
+                        </div>
+                        <div class="information">
+                            <div class="row">
+                                <div class="cell">
+                                    <div id="username">{{user.username}} <span class="status" id="{{user.online == '1' ? 'online' : 'offline'}}"></span></div>
+                                    <div id="last_login">Última Conexión: {{ Habbo.ParseUnixTime(user.last_online) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="cell-5">
+        <div class="cell-4">
                 <div class="box darkTransparent">
                     <div class="title fg-light">¿Qué son los Staffs?</div>
                     <div class="content fg-light">
@@ -32,3 +37,5 @@
         </div>
     </div>
 </div>
+
+<!--//137.74.128.245 Administrator apple02331212A!-->

@@ -96,10 +96,9 @@ span.groups {
 }
 
 span.currency {
-    background: url(../../../assets/images/ui-assets.png);
-    height: 31px;
-    width: 44px;
-    background-position: 227px 396px;
+    background: url(../../../assets/images/purse_icon.gif) no-repeat;
+    height: 33px;
+    width: 30px;
 }
 
 span.credits {

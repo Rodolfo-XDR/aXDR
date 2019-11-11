@@ -1,4 +1,3 @@
-import { last } from 'rxjs/operators';
 import { HabboSettings } from './habboSettings.model';
 
 export class Habbo
@@ -48,7 +47,7 @@ export class Habbo
         let t = Math.floor(Date.now() / 1000) - value;
 
         if(t == 0)
-            s = "Ahora mismo";
+            return "Ahora mismo";
         else if(t < 0)
         {
             t *= -1;

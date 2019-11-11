@@ -17,8 +17,4 @@ export class HabboSettings
     updateHeader(value : any) {
         this.web_header = value;
     }
-
-    updateSettings() {
-
-    }
 }

@@ -6,6 +6,7 @@ import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeIn, fadeOut, slideInLeft, slideOutDown, slideInUp } from 'ng-animate';
 import { first } from 'rxjs/operators';
 import { Routing } from 'src/routing';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -34,6 +35,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
   private isError = false;
   private errorMsg = '';
+  private ban = null;
 
   constructor(injector : Injector) {
     super(injector);
@@ -53,7 +55,18 @@ export class LoginComponent extends BaseComponent implements OnInit {
       return this.errorHandling('invalid_form');
 
     this.login(this.credentials.identification, this.credentials.password)
-    .pipe(first()).subscribe(data => {}, error => this.errorHandling(error.error.message));
+    .pipe(first())
+    .subscribe(
+      data => {},
+      error => {
+        if(error.error.ban != undefined)
+        {
+          this.ban = error.error.ban;
+          this.errorHandling('banned');
+        }
+        else
+        this.errorHandling(error.error.message)
+      });
   }
 
   /*
@@ -71,6 +84,9 @@ export class LoginComponent extends BaseComponent implements OnInit {
       case 'wrong_password':
       case 'user_not_found':
         this.errorMsg = "Los datos proporcionados son incorrectos";
+        break;
+      case 'banned':
+        this.errorMsg = "Has sido baneado! Razón: " + this.ban.ban_reason
         break;
       case 'invalid_parameters':
       case 'invalid_localStorage':
