@@ -6,7 +6,9 @@
             </div>
             <div class="cell arctic-cell-menu">
                 <ul class="h-menu arctic-menu">
-                    <li><a [routerLink]="['/me']">Home</a></li>
+                    <li *ngFor="let tab of Tabs">
+                        <a [routerLink]="tab.path">{{ tab.title }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="cell-2">
@@ -16,9 +18,9 @@
         <div class="row arctic-subHeader {{ Habbo.settings.web_header }} py-2">
             <div class="cell">
                 <ul class="h-menu arctic-subMenu">
-                    <li><a [routerLink]="['/me']">Home</a></li>   
-                    <li><a [routerLink]="['/community/team']">Team</a></li>
-                    <li><a [routerLink]="['/settings']">Ajustes</a></li> 
+                    <li @fadeInOut *ngFor="let subTab of currentSubTabs">
+                        <a [routerLink]="subTab.path">{{ subTab.title }}</a>
+                    </li>
                 </ul>
             </div>
         </div>

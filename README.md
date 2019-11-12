@@ -15,7 +15,6 @@
 > + Habbo *sign in/sign up* within aXDR API
 > + Account log out working.
 > #### Alpha:
-> + Menu System Improvement (09-23-2019)
 > + Update from Angular 7 to Angular 8 (09-27-2019)
 > + Client Component Done (09-27-2019)
 > + All Web Reconstruction (10-15-2019)
@@ -24,9 +23,9 @@
 > + Better Session Handling (10-30-2019)
 > + Improved Heights in WEB CSS (11-2-2019)
 > + Ban Checks (11-10-2019)
+> + Menu System Improvement (11-12-2019)
 
 ### Pending to terminate ALPHA VERSION:
-TODO Sistema de Menú (Ya lo tengo hecho pero me da mucha flojera hacerlo implementarlo de nuevo) pero ya es hora de implementarlo
 TODO Página de Tops
 TODO Página de Comunidad
 TODO Página de Noticias

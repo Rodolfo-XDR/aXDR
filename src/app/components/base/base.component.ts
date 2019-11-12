@@ -21,6 +21,8 @@ export class BaseComponent {
   private authService : AuthenticationService;
   private clientService : ClientService;
   private habboService : HabboService;
+  
+  public HotelName : string = "Gabbuz";
 
   constructor(private injector : Injector) {
     this.sessionService = this.injector.get(SessionService);

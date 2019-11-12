@@ -24,8 +24,6 @@ export class TeamComponent extends BaseComponent implements OnInit {
         data.forEach(element => {
           this.ranks.push(new Rank(element.id, element.rank_name, element.users));
         });
-
-        console.log(this.ranks);
       }, 
       err =>
       {

@@ -1,8 +1,16 @@
-export interface menuItem 
+export class menuItem 
 {
-    _id?: string;
-    _title: string;
-    _path?: string;
-    _children?: menuItem[];
-    _order?: number;
+    //TODO Create Accesors pls;
+    public id: string;
+    public title: string;
+    public path: string;
+    public children: menuItem[];
+    public order: number;
+
+    constructor(title : string, path : string, children : menuItem[], id : string = '') {
+        this.title = title;
+        this.path = path;
+        this.children = children;
+        this.id = id;
+    }
 }
