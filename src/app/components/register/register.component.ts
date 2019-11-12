@@ -1,10 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { Location } from '@angular/common';
-import { NgForm } from '@angular/forms';
 import { BaseComponent } from '../base/base.component';
 import { first } from 'rxjs/operators';
-import { Routing } from 'src/routing';
-import { Router } from '@angular/router';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeIn, fadeOut, slideInLeft, slideOutDown, bounceInRight } from 'ng-animate';
 

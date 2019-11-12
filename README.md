@@ -31,10 +31,14 @@ TODO Página de Tops
 TODO Página de Comunidad
 TODO Página de Noticias
 TODO Página Staff - 80%
+TODO Error Page
+TODO Titulos de Pagina!!!!! IMPORTANTE
 
 ### BETA VERSION:
 > + Administrator Control Panel INTRODUCTION!
-> + Profile Pages INTRODUCTIOPN!
+> + Login REDESIGN!!!!!
+> + Profile Pages INTRODUCTION!
+> + PAPERS INTRODUCTION! (Privacy, Cookies, Terms & Conditions)
 > + Global Configuration FILE
 > + SOCKETS INTRODUCTION!
 

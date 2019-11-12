@@ -78,33 +78,33 @@ export class ClientComponent extends BaseComponent implements OnInit {
     let variables: Object = {
       "connection.info.host"          : "127.0.0.1",
       "connection.info.port"          : 30000,
-      "url.prefix"                    : "http://localhost:4200/",
-      "site.url"                      : "http://localhost:4200/",
-      "client.reload.url"             : "http://localhost:4200/client",
-      "client.fatal.error.url"        : "http://localhost:4200/client",
-      "client.connection.failed.url"  : "http://localhost:4200/client",
-      "external.variables.txt"        : "http://localhost/swf/gamedata/external_variables/2.txt",
-      "external.texts.txt"            : "http://localhost/swf/gamedata/external_flash_texts/1.txt",
-      "productdata.load.url"          : "http://localhost/swf/gamedata/productdata/1.txt",
-      "furnidata.load.url"            : "http://localhost/swf/gamedata/furnidata_xml/5.xml",
-      "external.figurepartlist.txt"   : "http://localhost/swf/gamedata/figuredata/1.xml",
+      "url.prefix"                    : "http://ifoster.es/",
+      "site.url"                      : "http://ifoster.es/",
+      "client.reload.url"             : "http://ifoster.es/client",
+      "client.fatal.error.url"        : "http://ifoster.es/client",
+      "client.connection.failed.url"  : "http://ifoster.es/client",
+      "external.variables.txt"        : "http://ifoster.es/swf/gamedata/external_variables.txt",
+      "external.texts.txt"            : "http://ifoster.es/swf/gamedata/external_flash_texts.txt",
+      "productdata.load.url"          : "http://ifoster.es/swf/gamedata/productdata.txt",
+      "furnidata.load.url"            : "http://ifoster.es/swf/gamedata/furnidata.xml",
+      "external.figurepartlist.txt"   : "http://ifoster.es/swf/gamedata/figuredata.xml",
       "client.starting.revolving"     : "Para ciencia, \u00A1T\u00FA, monstruito!\/Cargando mensajes divertidos... Por favor, espera.\/\u00BFTe apetecen salchipapas con qu\u00E9?\/Sigue al pato amarillo.\/El tiempo es s\u00F3lo una ilusi\u00F3n.\/\u00A1\u00BFTodav\u00EDa estamos aqu\u00ED?!\/Me gusta tu camiseta.\/Mira a la izquierda. Mira a la derecha. Parpadea dos veces. \u00A1Ta-ch\u00E1n!\/No eres t\u00FA, soy yo.\/Shhh! Estoy intentando pensar.\/Cargando el universo de p\u00EDxeles.",
       "use.sso.ticket"                : "1",
       "sso.ticket"                    : this.sso,
       "processlog.enabled"            : "1",
-      "flash.client.url"              : "http://localhost/swf/gordon/PRODUCTION-201702271202-391654714/",
+      "flash.client.url"              : "http://ifoster.es/swf/gordon/PRODUCTION-201611291003-338511768/",
       "flash.client.origin"           : "popup",
       "client.allow.cross.domain"     : "1",
       "client.notify.cross.domain"    : "0"
     };
 
     let params = {
-        "base"              : "http://localhost/swf/gordon/PRODUCTION-201702271202-391654714/",
+        "base"              : "http://ifoster.es/swf/gordon/PRODUCTION-201611291003-338511768/",
         "allowScriptAccess" : "always",
         "menu"              : "false"
     };
 
-    this.SWF.embedSWF("http://localhost/swf/gordon/PRODUCTION-201702271202-391654714/aHabbo.swf", 'hotel-client', '100%', '100%', '10.0.0', '', variables, params, null);
+    this.SWF.embedSWF("http://ifoster.es/swf/gordon/PRODUCTION-201611291003-338511768/habbo.swf", 'hotel-client', '100%', '100%', '10.0.0', '', variables, params, null);
 
     return Promise.resolve();
   }
