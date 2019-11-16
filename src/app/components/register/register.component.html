@@ -23,7 +23,7 @@
                   </span>
                 </div>
                 <div class="form-group">
-                  <re-captcha (resolved)="resolved($event)" siteKey="6LdeqFsUAAAAAHNEkqlaD3ylMuN82VXH3IYM0gzu"></re-captcha>
+                  <re-captcha (resolved)="resolved($event)" siteKey="{{ Config.reCAPTCHASettings.siteKey }}"></re-captcha>
                 </div>
               </div>
               <div class="cell">

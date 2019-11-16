@@ -6,6 +6,7 @@ import { MenuService } from 'src/app/shared/menu.service';
 import { menuItem } from 'src/app/models/menuItem.model';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeIn } from 'ng-animate';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -19,37 +20,35 @@ import { fadeIn } from 'ng-animate';
 })
 export class HeaderComponent extends BaseComponent implements OnInit {
 
-  public Tabs : menuItem[];
+  public tabs : menuItem[];
   public currentSubTabs : menuItem[];
 
-  constructor(injector : Injector, private menuService : MenuService, private router : Router, private activatedRoute : ActivatedRoute) {
+  constructor(injector : Injector, private router : Router, private activatedRoute : ActivatedRoute, private titleService : Title) {
     super(injector);
   }
 
   ngOnInit() {
-    this.Tabs = this.menuService.Tabs;
+    this.tabs = this.menuTabs;
+    console.log(this.tabs);
+    this.currentSubTabs = this.subTabs;
+    this.titleReplace();
 
-    this.Tabs.forEach(tab => {
-      tab.title = tab.title.replace("%USERNAME%", this.Habbo.username);
-      tab.title = tab.title.replace('%HOTELNAME%', this.HotelName);
-      tab.children.forEach(child => {
-        child.title = child.title.replace("%USERNAME%", this.Habbo.username);
-        child.title = child.title.replace('%HOTELNAME%', this.HotelName);
-      })
-
-      if(this.activatedRoute.firstChild.routeConfig.data.id == tab.id)
-        this.currentSubTabs = tab.children;
-    });
 
     this.router.events.subscribe(e => {
       if(e instanceof NavigationEnd) {
-        this.Tabs.forEach(tab => {
+        this.titleReplace();
+        this.tabs.forEach(tab => {
           if(this.activatedRoute.firstChild.routeConfig.data.id == tab.id)
             this.currentSubTabs = tab.children;
         })
       }
     })
+  }
 
+  titleReplace()
+  {
+    let t = this.activatedRoute.firstChild.firstChild.routeConfig.data.title.replace('%HOTELNAME%', this.Config.siteName);
+    this.titleService.setTitle(t + " - ");
   }
 
   disconnect() {

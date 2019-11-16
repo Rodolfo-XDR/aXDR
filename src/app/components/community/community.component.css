@@ -1,0 +1,43 @@
+/* ubuntu_alert */
+.ubuntu_alert.body {
+    border:1px solid #000;
+    background: #E9E9E2;
+    border-radius:8px;
+    overflow: hidden;
+  }
+  .ubuntu_alert .header {
+    font-size: 16px;
+    background-color: #307994;
+    color: #fff;
+    border-radius:7px 7px 0 0;
+    text-align: center;
+    image-rendering: pixelated;
+    border-bottom:1px solid #000;
+    padding:6px;
+    box-shadow: inset 2px 2px #398DAC,inset -2px 2px #398DAC;
+    margin: 0;
+  }
+  .ubuntu_alert .header .close {
+    float: right;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAA7CAYAAACZr7GXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAADImlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozREFEOTIwMzkwQTkxMUU0QURDNUM1RTNDMUM1RDkxNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozREFEOTIwNDkwQTkxMUU0QURDNUM1RTNDMUM1RDkxNSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNEQUQ5MjAxOTBBOTExRTRBREM1QzVFM0MxQzVEOTE1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNEQUQ5MjAyOTBBOTExRTRBREM1QzVFM0MxQzVEOTE1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+WdEjPwAAAitJREFUWEe1l88rRUEUgO9VhBIpCr1EpISsKL2VspTV8z/YsGShpCxYsvE/sJKlYiPFSpENeUnPRqGUH6vrnfPm3DnvdmbuvXOvr6Y5b8b57px507zLn1rbD7wqV9tL0DlRdWCPMhA9zk3jgAuDJ5co9KtxQKLy1w/2aRhobcYehA0YVXERATwvlOWBKJs9v8YmYZuzriyaZJIQouy0OKkiLeAiPs8xrkwSAiYRYC0zmmgTAeE5Oy4/10YYy/cVFWn2hvtUpJkfKNSfsyhcxAXSAwhRJomSCK17Fi1JKpFj3bOkxO6ZC6EM7C7wPCwTgqz3GaJu2swNPFgmXbuuUH6uX0D4G1Dq6lBD6Tl8/dC/ASQqtrdin5aepkZv8e5Jl+kq4vzPoeWsPLxgk7DNWVcWTTJJCFG2O9SrIi3gIj7PMa5MEgImEWAtM5poEwHhORv5+a2NMLY+v1WkWW9rUZFmotBdf86icBEXSA8gRJkkSiK07lm0JKlEjnXPkhK7Zy5klsGqiPA+OxjtV0PpgRLxPgMZDOTxtp3/nsGqgiBwblQVHg0YACo7m9inoW91A3vf97UMRG9HhziRhs6FEgpB9v/nbPziNmwc0zgRuzJKNAk4icpMIgJE2c3MmIpkTPPGlZkSbA+qk529vofNVBqM87/jiCuzvZ4DTm/bRNxbNhErk/4PMCHKIJEaxzROJCozKfnfGvCBhC6ACFHXduYGHtwzusNdqeV73h8FK1Oq2W/xKQAAAABJRU5ErkJggg==);
+    background-position: 0 0;
+    display: block;
+    height: 20px;
+    width: 19px;
+    font-size: 0;
+    margin-top: -1px;
+    margin-right: 2px;
+  }
+  .ubuntu_alert .header .close:hover {
+    background-position: 0 -39px;
+  }
+  .ubuntu_alert .header .close:active {
+    background-position: 0 -20px;
+    height: 19px;
+  }
+  .ubuntu_alert .content {
+    padding:10px;
+    box-shadow:inset -2px -2px #fff,inset 2px -2px #fff;
+    font-size: 12px;
+    border-radius: 0 0 8px 8px
+  }

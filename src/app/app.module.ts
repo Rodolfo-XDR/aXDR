@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule  } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RecaptchaModule } from 'ng-recaptcha';
+
+import { ConfigService } from './shared/config.service';
 
 import { AppComponent } from './components/app/app.component';
 import { BaseComponent } from './components/base/base.component';
@@ -26,6 +28,13 @@ import { ClientComponent } from './components/client/client.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SideComponent } from './components/side/side.component';
 import { TeamComponent } from './components/team/team.component';
+import { TopComponent } from './components/top/top.component';
+
+const appConfig = (config : ConfigService) => {
+  return() => {
+    return config.loadConfiguration();
+  }
+}
 
 @NgModule({
   declarations: [
@@ -48,7 +57,8 @@ import { TeamComponent } from './components/team/team.component';
     ClientComponent,
     HeaderComponent,
     SideComponent,
-    TeamComponent
+    TeamComponent,
+    TopComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +68,15 @@ import { TeamComponent } from './components/team/team.component';
     FormsModule,
     RecaptchaModule
   ],
-  providers: [],
+  providers: [
+    ConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appConfig,
+      multi: true,
+      deps: [ConfigService]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
 import { menuItem } from '../models/menuItem.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
 
-  public Tabs : menuItem[] = [];
+  private USER : string = "";
+  private HOTELNAME : string = "";
 
-  constructor(private router : Router) 
+  public Tabs : menuItem[] = [];
+  public currentSubTabs : menuItem[] = [];
+
+  constructor(private router : Router, private activatedRoute : ActivatedRoute, private configService : ConfigService) 
   {
     this.generateMenu();
   }
 
-  private generateMenu() : void
+  generateMenu() : void
   {
     this.router.config.forEach(Page => {
       
@@ -43,5 +48,40 @@ export class MenuService {
         this.Tabs.push(new menuItem(tab.data.title, tabPath, children, tab.data.id));
       });
     });
+
+    this.prepareTabs();
   }
+
+  prepareTabs()
+  {
+    this.Tabs.forEach(tab => {
+      tab.title = tab.title.replace("%USERNAME%", this.USER);
+      tab.title = tab.title.replace('%HOTELNAME%', this.HOTELNAME);
+      tab.children.forEach(child => {
+        child.title = child.title.replace("%USERNAME%", this.USER);
+        child.title = child.title.replace('%HOTELNAME%', this.HOTELNAME);
+      })
+    })
+  }
+
+  retrieveSubTabs() 
+  {
+    this.Tabs.forEach(tab => {
+      if(this.activatedRoute.firstChild.routeConfig.data.id == tab.id)
+        this.currentSubTabs = tab.children;
+    })
+
+    return this.currentSubTabs;
+  }
+
+  setUser(value : string)
+  {
+    this.USER = value;
+  }
+
+  setHotelname(value : string)
+  {
+    this.HOTELNAME = value;
+  }
+  
 }

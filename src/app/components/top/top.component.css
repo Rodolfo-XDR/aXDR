@@ -1,0 +1,139 @@
+.habbo-box {
+    border:1px solid #000;
+    border-radius:13px;
+    background: #6794a7;
+    padding:3px 2px 3px 4px;
+    box-shadow:inset 1px 1px #6794a7, inset 2px 2px #79aec4, inset -1px -1px #345e6f;
+    image-rendering:pixelated;
+}
+
+.habbo-box > .header {
+    position: relative;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    color: white;
+}
+
+.habbo-box > .content {
+    background:#fff;
+    border:1px solid #000;
+    box-shadow:1px 1px #345e6f;
+    border-radius: 5px;
+    margin:7px 7px 7px 5px;
+    font-size: 11pt;
+    color: #000;
+}
+
+
+.first {
+    flex: 1 0 auto;
+    display: flex;
+    padding: 10px 5px;
+}
+
+.top-avatar {
+    background: url('../../../assets/images/ui-assets-2015.png');
+    background-position: 429px -73px;
+    overflow: hidden;
+    width: 98px;
+    height: 108px;
+}
+
+.top-avatar img {
+    margin: 0px 15px;
+}
+
+.top-information {
+    flex: 1 0 0;
+    padding: 5px;
+}
+
+.top-place {
+    float: left;
+    height: 35px;
+    width: 35px;
+    background: #b1794a;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+    margin: 0 5px;
+}
+
+.top-username {
+    font-weight: bold;
+    font-size: 18pt;
+    margin-bottom: 10px;
+}
+
+
+
+.top-currency, .ranking-currency {
+    display: -webkit-inline-box;
+}
+
+.ranking-user {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    border-top: 1px dashed #545758;
+}
+
+.ranking-place {
+    margin: 5px 10px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 13px;
+    background: #4c849c;
+    color: white;
+    font-weight: bold;
+}
+
+.ranking-avatar {
+    padding: 5px;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+}
+
+.ranking-username {
+    font-weight: bold;
+    font-size: 11pt;
+    margin: 0 10px;
+    line-height: 35px;
+}
+
+.ranking-currency {
+    line-height: 35px;
+    font-size: 9pt;
+}
+
+span.status {
+    background: url('../../../assets/images/ui-assets.png');
+    display: block;
+    float: right;
+}
+
+span.status#online {
+    background-position: 150px 300px;
+    height: 32px;
+    width: 27px;
+}
+
+span.status#offline {
+    background-position: 60px 662px;
+    height: 28px;
+    width: 22px;
+}
+
+span.credits {
+    background: url('../../../assets/images/ui-assets.png');
+    height: 22px;
+    width: 20px;
+    background-position: 50px 402px;
+    display: block;
+    margin: 0px 0px;
+}

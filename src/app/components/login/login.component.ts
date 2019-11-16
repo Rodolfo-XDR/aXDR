@@ -1,12 +1,9 @@
 import { Component, OnInit, Injector } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
 import { BaseComponent } from '../base/base.component';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeIn, fadeOut, slideInLeft, slideOutDown, slideInUp } from 'ng-animate';
 import { first } from 'rxjs/operators';
-import { Routing } from 'src/routing';
-import { ThrowStmt } from '@angular/compiler';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -37,9 +34,9 @@ export class LoginComponent extends BaseComponent implements OnInit {
   private errorMsg = '';
   private ban = null;
 
-  constructor(injector : Injector) {
+  constructor(injector : Injector, private titleService : Title) {
     super(injector);
-    
+    this.titleService.setTitle("¡Haz amig@s, diviértete y date a conocer! - ");
     this.credentials = {
       identification: null,
       password: null

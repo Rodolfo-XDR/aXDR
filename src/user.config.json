@@ -1,0 +1,36 @@
+{
+    "apiURL": "http://localhost:3000/api",
+    "siteName": "Gabbuz",
+    "siteLink": "http://localhost:4200",
+    "maintenanceEnabled": false,
+    "siteImages": {
+        "images": "https://habboapi.com/assets/images",
+        "badges": "https://habboapi.com/assets/c_images/album1584",
+        "groupBadges": "https://habboapi.com/assets/c_images/Badgeparts/generated",
+        "avatars": "http://avatar-retro.com/habbo-imaging/avatarimage?figure="
+    },
+    "SWF": {
+        "externalVariables": "https://habboapi.com/assets/gamedata/external_variables.txt",
+        "externalFlashTexts": "https://habboapi.com/assets/gamedata/external_flash_texts.txt",
+        "productData": "https://habboapi.com/assets/gamedata/productdata.txt",
+        "furniData": "https://habboapi.com/assets/gamedata/furnidata.xml",
+        "figureList": "https://habboapi.com/assets/gamedata/figuredata.xml",
+        "clientPromoHabbos": "https://habboapi.com/assets/gamedata/habblet/xml/promo_habbos.xml",
+        "base": "https://habboapi.com/assets/gordon/game/",
+        "habboSWF": "https://habboapi.com/assets/gordon/PRODUCTION-201611291003-338511768/Habbo.swf"
+    },
+    "reCAPTCHASettings": {
+        "captchaEnabled": false,
+        "siteKey": "6LdeqFsUAAAAAHNEkqlaD3ylMuN82VXH3IYM0gzu",
+        "secretKey": ""
+    },
+    "emulatorSettings": {
+        "emulatorType": "arcturus",
+        "ip": "127.0.0.1",
+        "port": 30000,
+        "rCRON": {
+            "ip": "",
+            "port": 12422
+        }
+    },
+}

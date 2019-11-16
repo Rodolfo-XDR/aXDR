@@ -20,8 +20,10 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
+              "src/user.config.json",
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/web.config"
             ],
             "styles": [
               "node_modules/metro4/build/css/metro-all.css",

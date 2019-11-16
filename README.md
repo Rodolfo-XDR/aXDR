@@ -1,5 +1,5 @@
 # ![alt text](https://i.imgur.com/OTtNhTo.png) aXDR CMS 
-##### Version Alpha 2.3.0
+##### Version Alpha 5.1.0
 ##### Rodolfo Contreras (Mr.M) - Arctic Development
 
 ### Getting Started
@@ -24,22 +24,21 @@
 > + Improved Heights in WEB CSS (11-2-2019)
 > + Ban Checks (11-10-2019)
 > + Menu System Improvement (11-12-2019)
+> + Configuration FILE Done! (11-16-2019)
 
 ### Pending to terminate ALPHA VERSION:
-TODO Página de Tops
 TODO Página de Comunidad
 TODO Página de Noticias
-TODO Página Staff - 80%
 TODO Error Page
-TODO Titulos de Pagina!!!!! IMPORTANTE
+TODO BUG Cuando reinicias la web desde /hotel y regresas a la web, subTabs no cargan...
 
 ### BETA VERSION:
 > + Administrator Control Panel INTRODUCTION!
 > + Login REDESIGN!!!!!
 > + Profile Pages INTRODUCTION!
 > + PAPERS INTRODUCTION! (Privacy, Cookies, Terms & Conditions)
-> + Global Configuration FILE
 > + SOCKETS INTRODUCTION!
+> + Ensure that you can open the WEB multiple times but don't load the client until the user clicks on it. 
 
 
 ### FUTURE FEATURES:

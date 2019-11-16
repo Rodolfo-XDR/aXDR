@@ -7,6 +7,8 @@ import { AuthenticationService } from 'src/app/shared/authentication.service';
 import { ClientService } from 'src/app/shared/client.service';
 import { HabboService } from 'src/app/shared/habbo.service';
 import { Habbo } from 'src/app/models/habbo.model';
+import { MenuService } from 'src/app/shared/menu.service';
+import { ConfigService } from 'src/app/shared/config.service';
 
 @Component({
   selector: '',
@@ -17,19 +19,24 @@ import { Habbo } from 'src/app/models/habbo.model';
 export class BaseComponent {
 
   private sessionService : SessionService;
-  private apiService : APIService;
   private authService : AuthenticationService;
   private clientService : ClientService;
   private habboService : HabboService;
-  
-  public HotelName : string = "Gabbuz";
+  private menuService : MenuService
+  private configService : ConfigService;
 
   constructor(private injector : Injector) {
+    this.configService = this.injector.get(ConfigService);
     this.sessionService = this.injector.get(SessionService);
-    this.apiService = this.injector.get(APIService);
     this.authService = this.injector.get(AuthenticationService);
     this.clientService = this.injector.get(ClientService);
     this.habboService = this.injector.get(HabboService);
+    this.menuService = this.injector.get(MenuService);
+  }
+
+  get Config()
+  {
+    return this.configService.Configuration;
   }
 
   register(username : string, mail : string, password : string) {
@@ -56,6 +63,14 @@ export class BaseComponent {
     return this.clientService.ClientShow;
   }
 
+  get menuTabs() {
+    return this.menuService.Tabs;
+  }
+
+  get subTabs() {
+    return this.menuService.currentSubTabs;
+  }
+
   setClientShow(value : boolean) {
     this.clientService.ClientShow.next(value);
   }
@@ -70,5 +85,9 @@ export class BaseComponent {
 
   getStaff() {
     return this.habboService.Staff;
+  }
+
+  get onlineCount() {
+    return this.habboService.Online;
   }
 }
