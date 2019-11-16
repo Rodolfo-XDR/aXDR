@@ -36,7 +36,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
   constructor(injector : Injector, private titleService : Title) {
     super(injector);
-    this.titleService.setTitle("¡Haz amig@s, diviértete y date a conocer! - ");
+    this.titleService.setTitle("¡Haz amig@s, diviértete y date a conocer! - " + this.Config.siteName);
     this.credentials = {
       identification: null,
       password: null

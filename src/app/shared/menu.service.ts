@@ -14,7 +14,7 @@ export class MenuService {
   public Tabs : menuItem[] = [];
   public currentSubTabs : menuItem[] = [];
 
-  constructor(private router : Router, private activatedRoute : ActivatedRoute, private configService : ConfigService) 
+  constructor(private router : Router, private activatedRoute : ActivatedRoute) 
   {
     this.generateMenu();
   }
@@ -48,18 +48,16 @@ export class MenuService {
         this.Tabs.push(new menuItem(tab.data.title, tabPath, children, tab.data.id));
       });
     });
-
-    this.prepareTabs();
   }
 
-  prepareTabs()
+  prepareTabs(username, hotelname)
   {
     this.Tabs.forEach(tab => {
-      tab.title = tab.title.replace("%USERNAME%", this.USER);
-      tab.title = tab.title.replace('%HOTELNAME%', this.HOTELNAME);
+      tab.title = tab.title.replace("%USERNAME%", username);
+      tab.title = tab.title.replace('%HOTELNAME%', hotelname);
       tab.children.forEach(child => {
-        child.title = child.title.replace("%USERNAME%", this.USER);
-        child.title = child.title.replace('%HOTELNAME%', this.HOTELNAME);
+        child.title = child.title.replace("%USERNAME%", username);
+        child.title = child.title.replace('%HOTELNAME%', hotelname);
       })
     })
   }

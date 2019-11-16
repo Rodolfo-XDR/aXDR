@@ -17,7 +17,7 @@ export class TeamComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getStaff().pipe(first())
+    this.Staff.pipe(first())
     .subscribe(
       data => 
       {

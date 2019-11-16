@@ -7,7 +7,7 @@
         "images": "https://habboapi.com/assets/images",
         "badges": "https://habboapi.com/assets/c_images/album1584",
         "groupBadges": "https://habboapi.com/assets/c_images/Badgeparts/generated",
-        "avatars": "http://avatar-retro.com/habbo-imaging/avatarimage?figure="
+        "avatars": "https://habbo.city/habbo-imaging/avatarimage?figure="
     },
     "SWF": {
         "externalVariables": "https://habboapi.com/assets/gamedata/external_variables.txt",
@@ -32,5 +32,5 @@
             "ip": "",
             "port": 12422
         }
-    },
+    }
 }

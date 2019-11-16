@@ -39,12 +39,24 @@ export class BaseComponent {
     return this.configService.Configuration;
   }
 
-  register(username : string, mail : string, password : string) {
-    return this.authService.register(username, mail, password);
+  get Habbo() : Habbo {
+    return this.habboService.Habbo;
+  }
+
+  get Staff() {
+    return this.habboService.Staff;
+  }
+
+  get onlineCount() {
+    return this.habboService.Online;
   }
 
   login(identification : string, password : string) {
     return this.authService.login(identification, password);
+  }
+
+  register(username : string, mail : string, password : string) {
+    return this.authService.register(username, mail, password);
   }
 
   logout() {
@@ -71,23 +83,15 @@ export class BaseComponent {
     return this.menuService.currentSubTabs;
   }
 
+  prepareTabs() {
+    return this.menuService.prepareTabs(this.Habbo.username, this.Config.siteName);
+  }
+
   setClientShow(value : boolean) {
     this.clientService.ClientShow.next(value);
   }
 
-  get Habbo() : Habbo {
-    return this.habboService.Habbo;
-  }
-
   updateHabboSettings(data) {
     return this.habboService.updateHabboSettings(data);
-  }
-
-  getStaff() {
-    return this.habboService.Staff;
-  }
-
-  get onlineCount() {
-    return this.habboService.Online;
   }
 }

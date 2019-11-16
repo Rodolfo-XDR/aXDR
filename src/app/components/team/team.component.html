@@ -8,7 +8,7 @@
             <div class="content">
                 <div class="staff" *ngFor="let user of rank.users">
                     <div class="avatar">
-                        <img src="https://habbo.city/habbo-imaging/avatarimage?figure={{user.look}}&size=l&action=&direction=2&head_direction=2&gesture=sml" alt="">
+                        <img src="{{Config.siteImages.avatars}}{{user.look}}&size=l&action=&direction=2&head_direction=2&gesture=sml" alt="">
                     </div>
                     <div class="information">
                         <div class="row">

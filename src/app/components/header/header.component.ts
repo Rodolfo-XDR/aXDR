@@ -25,30 +25,45 @@ export class HeaderComponent extends BaseComponent implements OnInit {
 
   constructor(injector : Injector, private router : Router, private activatedRoute : ActivatedRoute, private titleService : Title) {
     super(injector);
+    this.prepareTabs();
   }
 
   ngOnInit() {
     this.tabs = this.menuTabs;
-    console.log(this.tabs);
-    this.currentSubTabs = this.subTabs;
-    this.titleReplace();
 
+    this.titleReplace();
+    this.setSubTabs();
 
     this.router.events.subscribe(e => {
       if(e instanceof NavigationEnd) {
         this.titleReplace();
-        this.tabs.forEach(tab => {
-          if(this.activatedRoute.firstChild.routeConfig.data.id == tab.id)
-            this.currentSubTabs = tab.children;
-        })
+        this.setSubTabs();
       }
-    })
+    });
+
+  }
+
+  setSubTabs()
+  {
+    this.tabs.forEach(tab => {
+
+      if(this.activatedRoute.firstChild.routeConfig.data == null || undefined) return;
+      
+      if(this.activatedRoute.firstChild.routeConfig.data.id == tab.id)
+        this.currentSubTabs = tab.children;
+    });
   }
 
   titleReplace()
   {
+    if(this.activatedRoute.firstChild.routeConfig.path == "hotel")
+    {
+      this.titleService.setTitle("Hotel - " + this.Config.siteName)
+      return;
+    }
+
     let t = this.activatedRoute.firstChild.firstChild.routeConfig.data.title.replace('%HOTELNAME%', this.Config.siteName);
-    this.titleService.setTitle(t + " - ");
+    this.titleService.setTitle(t + " - " + this.Config.siteName);
   }
 
   disconnect() {
