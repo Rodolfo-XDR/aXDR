@@ -33,7 +33,7 @@ export const Routing = {
                 id: 'HABBO',
                 url: '',
                 directURL: 'me',
-                title: '%USERNAME%',
+                title: 'Inicio',
                 children: {
                     HOME: {
                         url: 'me',

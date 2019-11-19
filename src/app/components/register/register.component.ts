@@ -25,7 +25,7 @@ import { fadeIn, fadeOut, slideInLeft, slideOutDown, bounceInRight } from 'ng-an
 })
 export class RegisterComponent extends BaseComponent implements OnInit {
 
-  private registration = {
+  public registration = {
     username: null,
     mail: null,
     password: null,
@@ -34,8 +34,8 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     reCAPTCHA: false
   }
 
-  private isError = false;
-  private errorMsg = '';
+  public isError = false;
+  public errorMsg = '';
 
   constructor(injector : Injector, private location : Location) {
     super(injector);

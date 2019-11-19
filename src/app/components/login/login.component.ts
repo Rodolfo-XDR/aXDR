@@ -25,13 +25,13 @@ import { Title } from '@angular/platform-browser';
 })
 export class LoginComponent extends BaseComponent implements OnInit {
 
-  private credentials = {
+  public credentials = {
     identification: null,
     password: null
   }
 
-  private isError = false;
-  private errorMsg = '';
+  public isError = false;
+  public errorMsg = '';
   private ban = null;
 
   constructor(injector : Injector, private titleService : Title) {

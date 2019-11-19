@@ -9,13 +9,13 @@ declare var Metro;
 })
 export class SettingsComponent extends BaseComponent implements OnInit {
 
-  private settings = {
+  public settings = {
     web_background: null,
     web_header: null   
   }
 
-  private bgOptions = [ 'default', 'dark', 'light', 'habbo' ];
-  private headerOptions = [ 'default', 'darken', 'cold', 'crush' ];
+  public bgOptions = [ 'default', 'dark', 'light', 'habbo' ];
+  public headerOptions = [ 'default', 'darken', 'cold', 'crush' ];
 
   constructor(injector : Injector) {
     super(injector);

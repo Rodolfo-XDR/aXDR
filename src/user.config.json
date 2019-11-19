@@ -1,7 +1,7 @@
 {
     "apiURL": "http://localhost:3000/api",
     "siteName": "Gabbuz",
-    "siteLink": "http://localhost:4200",
+    "siteLink": "http://localhost",
     "maintenanceEnabled": false,
     "siteImages": {
         "images": "https://habboapi.com/assets/images",
@@ -10,14 +10,14 @@
         "avatars": "https://habbo.city/habbo-imaging/avatarimage?figure="
     },
     "SWF": {
-        "externalVariables": "https://habboapi.com/assets/gamedata/external_variables.txt",
-        "externalFlashTexts": "https://habboapi.com/assets/gamedata/external_flash_texts.txt",
-        "productData": "https://habboapi.com/assets/gamedata/productdata.txt",
-        "furniData": "https://habboapi.com/assets/gamedata/furnidata.xml",
-        "figureList": "https://habboapi.com/assets/gamedata/figuredata.xml",
-        "clientPromoHabbos": "https://habboapi.com/assets/gamedata/habblet/xml/promo_habbos.xml",
-        "base": "https://habboapi.com/assets/gordon/game/",
-        "habboSWF": "https://habboapi.com/assets/gordon/PRODUCTION-201611291003-338511768/Habbo.swf"
+        "externalVariables": "http://localhost/swf/gamedata/external_variables/1.txt",
+        "externalFlashTexts": "http://localhost/swf/gamedata/external_flash_texts/1.txt",
+        "productData": "http://localhost/swf/gamedata/productdata/1.txt",
+        "furniData": "http://localhost/swf/gamedata/furnidata_xml/1.xml",
+        "figureList": "http://localhost/swf/gamedata/figuredata/1.xml",
+        "clientPromoHabbos": "http://localhost/swf/gamedata/habblet/xml/promo_habbos.xml",
+        "base": "http://localhost/swf/gordon/PRODUCTION-201611291003-338511768/",
+        "habboSWF": "http://localhost/swf/gordon/PRODUCTION-201611291003-338511768/Habbo.swf"
     },
     "reCAPTCHASettings": {
         "captchaEnabled": false,

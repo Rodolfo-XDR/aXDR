@@ -13,7 +13,7 @@ export class ClientComponent extends BaseComponent implements OnInit {
 
   private SWF : any = require('es-swfobject');
 
-  private flashEnabled : boolean = false;
+  public flashEnabled : boolean = false;
   private loading : boolean = false;
   private done : boolean = false;
   private sso : string = null;

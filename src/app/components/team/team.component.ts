@@ -10,7 +10,7 @@ import { Rank } from 'src/app/models/rank.model';
 })
 export class TeamComponent extends BaseComponent implements OnInit {
 
-  private ranks = [];
+  public ranks = [];
 
   constructor(injector : Injector) {
     super(injector);

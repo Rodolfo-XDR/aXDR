@@ -1,5 +1,5 @@
 # ![alt text](https://i.imgur.com/OTtNhTo.png) aXDR CMS 
-##### Version Alpha 5.1.0
+##### Version Alpha 6.9.0
 ##### Rodolfo Contreras (Mr.M) - Arctic Development
 
 ### Getting Started
@@ -30,11 +30,11 @@
 TODO Página de Comunidad
 TODO Página de Noticias
 TODO Error Page
-TODO BUG Cuando reinicias la web desde /hotel y regresas a la web, subTabs no cargan...
 
 ### BETA VERSION:
+> + Interactive Side Bar!
 > + Administrator Control Panel INTRODUCTION!
-> + Login REDESIGN!!!!!
+> + ALL WEB DESIGN IMPROVEMENT! (HEADER, LOGIN, REGISTER, ME, COMMUNITY, TOPS, STAFF, EVERYTHING!)
 > + Profile Pages INTRODUCTION!
 > + PAPERS INTRODUCTION! (Privacy, Cookies, Terms & Conditions)
 > + SOCKETS INTRODUCTION!
