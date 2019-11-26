@@ -7,3 +7,282 @@
     background-color: #000;
     z-index: 610;
 }
+
+.client {
+    left: -9999px;
+}
+
+.client--visible {
+    left: 0;
+}
+
+.client__buttons {
+    left: 12px;
+    position: absolute;
+    top: 12px;
+    z-index: 630;
+}
+
+.client__buttons .client__close, .client__buttons button {
+    line-height: 1.2;
+    text-align: center;
+    color: #000;
+    font-size: 12px;
+    border-style: solid;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.client__buttons button {
+    box-shadow: 0 3px 0 1px rgba(0,0,0,.3);
+    background-color: #ffb900;
+    border-color: #ffea00;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border-width: 2px;
+    display: block;
+    float: left;
+    outline: none;
+}
+
+.client__buttons .client__close, .hotel-button {
+    filter: drop-shadow(-1px 4px 0 rgba(0, 0, 0, .3));
+}
+
+.client__buttons .client__close, .client__buttons button {
+    line-height: 1.2;
+    text-align: center;
+    color: #000;
+    font-size: 12px;
+    border-style: solid;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.client__buttons .client__close {
+    display: inline-block;
+    background-color: #ffb900;
+    border-color: #ffea00;
+    border-radius: 0 5px 5px 0;
+    border-width: 2px 2px 2px 1px;
+    box-shadow: none;
+    position: relative;
+    margin-left: 14px;
+    padding: 5px 6px;
+}
+
+.client__buttons .client__close:after, .client__buttons .client__close:before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-style: solid;
+}
+
+.client__buttons .client__close:before {
+    border-width: 15px;
+    top: -2px;
+    border-color: transparent #ffea00 transparent transparent;
+    left: -31px;
+}
+
+.client__buttons .client__close:hover:before {
+    border-color: transparent #fffd70 transparent transparent;
+}
+
+.client__buttons .client__close:after {
+    border-width: 13px;
+    top: 0;
+    border-color: transparent #ffb900 transparent transparent;
+    left: -26px;
+}
+
+.client__buttons .client__close:hover:after {
+    border-color: transparent #ffd400 transparent transparent;
+}
+
+.client__close__expand {
+    transition: width .15s ease-out;
+    float: left;
+    overflow: hidden;
+}
+
+.client__close__text {
+    line-height: 16px;
+    padding-left: 6px;
+}
+
+.client__buttons .client__fullscreen {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.client__buttons button:first-child, .client__buttons button:not(:first-child):not(:last-child) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.client__buttons button:not(:last-child) {
+    margin-right: 4px;
+}
+
+.client__buttons button:last-child, .client__buttons button:not(:first-child):not(:last-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.client__buttons .client__close:active, .client__buttons .client__close:hover {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.client__buttons .client__close:hover {
+    background-color: #ffd400;
+    border-color: #fffd70;
+}
+
+.client__buttons button:hover {
+    background-color: #ffd400;
+    border-color: #fffd70;
+}
+
+.icon {
+    display: inline-block;
+    font-style: normal;
+}
+
+.icon--habbo {
+    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/sprite.56f427a4.png);
+    background-position: -511px -413px;
+    width: 16px;
+    height: 16px;
+}
+
+.icon--fullscreen {
+    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/sprite.56f427a4.png);
+    background-position: -511px -447px;
+    width: 15px;
+    height: 14px;
+}
+
+.client__close__icon {
+    float: left;
+}
+
+.client__fullscreen__icon {
+    display: block;
+}
+
+.habbo-client-closed, .habbo-client-error {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: -ms-flexbox;
+    padding: 48px 12px;
+    z-index: 610;
+    left: 0;
+}
+
+.habbo-client-error {
+    -ms-flex-align: center;
+    align-items: center;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.client-error__background-frank {
+    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/backgrounds/flash_error_bg.57539aa2.png);
+    display: block;
+    height: 368px;
+    padding: 80px 17px 35px 242px;
+    position: relative;
+    width: 639px;
+}
+
+.client-error__text-contents {
+    height: 253px;
+    position: absolute;
+    text-align: left;
+}
+
+.client-error__hotel-button-div {
+    bottom: 30px;
+    float: right;
+    position: absolute;
+    right: 30px;
+}
+
+.client-error__title {
+    text-align: left;
+    font-size: 36px;
+    color: #fff;
+}
+
+.client-error__text {
+    color: #7ecaee;
+}
+
+.hotel-button {
+    display: inline-block;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #ffb900;
+    border-color: #ffea00;
+    color: #000;
+    border-radius: 5px 0 0 5px;
+    border-width: 2px 1px 2px 2px;
+    border-style: solid;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    box-shadow: none;
+    position: relative;
+    margin-right: 20px;
+    margin-top: -3px;
+    padding: 6px 12px 6px 24px;
+}
+
+.hotel-button__text {
+    position: relative;
+    padding-right: 27px;
+    text-align: right;
+    line-height: 26px;
+}
+
+.hotel-button__text:before {
+    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/sprite.56f427a4.png);
+    background-position: -242px -434px;
+    width: 21px;
+    height: 26px;
+    content: '';
+    display: block;
+    margin-top: -13px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.hotel-button:after, .hotel-button:before {
+    border-style: solid;
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+.hotel-button:before {
+    border-width: 21px;
+    top: -2px;
+    border-color: transparent transparent transparent #ffea00;
+    right: -43px;
+}
+
+.hotel-button:after {
+    border-width: 19px;
+    top: 0;
+    border-color: transparent transparent transparent #ffb900;
+    right: -38px;
+}

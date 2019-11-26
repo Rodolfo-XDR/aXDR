@@ -3,7 +3,7 @@
     background: #001629;
     background: -webkit-linear-gradient(to bottom, #003f75, #001629);
     background: linear-gradient(to bottom, #003f75, #001629);
-    box-shadow: 0px 0px 5px 1px black;
+    box-shadow: 0px 3px 6px -2px black;
     z-index: 2;
   }
   
@@ -98,4 +98,19 @@
   ul.arctic-subMenu > li > a {
     margin: 2px 10px;
     font-size: 10pt;
+  }
+
+  ul.arctic-menu > li > a span.arrow {
+    height: 18px;
+    width: 15px;
+    display: -webkit-inline-box;
+    margin: -4px 0;
+    background-position: 16px -294px;
+  }
+
+  ul.arctic-menu > li > a:hover span.arrow {
+    height: 20px;
+    width: 20px;
+    display: -webkit-inline-box;
+    background-position: 30px 387px;
   }

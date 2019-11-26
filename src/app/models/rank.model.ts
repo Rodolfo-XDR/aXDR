@@ -4,12 +4,14 @@ export class Rank
 {
     id : number;
     name: string;
-    users? : any;
+    users? : Array<any>;
+    badge? : string;
 
-    constructor(id, name, users = null)
+    constructor(id, name, badge, users = null)
     {
         this.id = id;
         this.name = name;
+        this.badge = badge;
         this.users = users;
     }
 }

@@ -1,5 +1,5 @@
 # ![alt text](https://i.imgur.com/OTtNhTo.png) aXDR CMS 
-##### Version Alpha 6.9.0
+##### Version Alpha 7.0.0
 ##### Rodolfo Contreras (Mr.M) - Arctic Development
 
 ### Getting Started

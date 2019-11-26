@@ -26,12 +26,10 @@
               "src/web.config"
             ],
             "styles": [
-              "node_modules/metro4/build/css/metro-all.css",
+              "node_modules/metro4/build/css/metro-all.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/metro4/build/js/metro.js"
             ]
           },
           "configurations": {
@@ -126,6 +124,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "aXDR"
 }

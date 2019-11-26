@@ -1,28 +1,20 @@
 <div [ngClass]="{'d-none' : clientShow.value}">
-    <div class="grid mb-0">
-        <div class="row arctic-header {{ Habbo.settings.web_header }} py-2">
-            <div class="cell-auto arctic-logo px-3">
-                <img src="../../../assets/images/gabbuz_small.png" alt="">
-            </div>
-            <div class="cell arctic-cell-menu">
-                <ul class="h-menu arctic-menu">
-                    <li *ngFor="let tab of tabs">
-                        <a [routerLink]="tab.path">{{ tab.title }}</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="cell-2">
-                <button (click)="disconnect()" class="button habbo red">Salir</button>
-            </div>
+    <div class="row m-0 arctic-header {{ Habbo.settings.web_header }} py-2">
+        <div class="cell arctic-cell-menu">
+            <ul class="h-menu arctic-menu">
+                <li *ngFor="let tab of tabs">
+                    <a [routerLink]="tab.path"><span class="asset arrow"></span>{{ tab.title }}</a>
+                </li>
+            </ul>
         </div>
-        <div class="row arctic-subHeader {{ Habbo.settings.web_header }} py-2">
-            <div class="cell">
-                <ul class="h-menu arctic-subMenu">
-                    <li @fadeInOut *ngFor="let subTab of currentSubTabs">
-                        <a [routerLink]="subTab.path">{{ subTab.title }}</a>
-                    </li>
-                </ul>
-            </div>
+    </div>
+    <div class="row arctic-subHeader {{ Habbo.settings.web_header }} py-2">
+        <div class="cell">
+            <ul class="h-menu arctic-subMenu">
+                <li @fadeInOut *ngFor="let subTab of currentSubTabs">
+                    <a [routerLink]="subTab.path">{{ subTab.title }}</a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

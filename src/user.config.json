@@ -5,7 +5,7 @@
     "maintenanceEnabled": false,
     "siteImages": {
         "images": "https://habboapi.com/assets/images",
-        "badges": "https://habboapi.com/assets/c_images/album1584",
+        "badges": "http://localhost/swf/c_images/album1584",
         "groupBadges": "https://habboapi.com/assets/c_images/Badgeparts/generated",
         "avatars": "https://habbo.city/habbo-imaging/avatarimage?figure="
     },

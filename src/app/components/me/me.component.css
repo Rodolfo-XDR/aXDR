@@ -1,4 +1,11 @@
-.xdr-welcome {
-    font-weight: 600;
-    font-size: 18px;
+.welcome {
+    font-family: 'Ubuntu Condensed';
+    font-size: 12pt;
+    text-align: center;
+    color: #2d200e;
+    background: #de962b;
+    border: 2px solid #ffb54a;
+    border-radius: 5px;
+    padding: 4px 10px;
+    margin: 10px auto;
 }

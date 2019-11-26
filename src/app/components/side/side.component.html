@@ -1,46 +1,38 @@
 <div [ngClass]="{'d-none' : clientShow.value}" class="xdr-side">
-    <div class="row">
-        <div class="cell">
-            <div class="box">
-                <div class="sideHeader m-0 fg-light">{{ Habbo.username }} <span id="status" class="online"></span></div>
-                <div class="user-data">
-                    <div class="avatar">
-                        <img src="{{Config.siteImages.avatars}}{{Habbo.look}}&size=l&action=wav&direction=2&head_direction=2&gesture=sml" />
-                    </div>
-                    <div class="information fg-light">
-                        <div class="last-login">
-                            <b>Última Conexión:</b> {{ Habbo.ParseUnixTime(Habbo.last_online) }}
-                        </div>
-                        <div class="join-date">
-                            <b>Cread@:</b> {{ Habbo.account_created }}
-                        </div>
-                        <a routerLink="/hotel" class="button habbo m-1 text-upper text-bold">Jugar Ahora <span class="flashy-arrow"></span></a>
-                    </div>
-                </div>
+    <div class="user-data">
+        <div class="asset avatar">
+            <img src="{{Config.siteImages.avatars}}{{Habbo.look}}&size=m&action=wav&direction=2&head_direction=2&gesture=sml" />
+        </div>
+        <div class="username-field">
+            <div class="welcome-message">Hola mi nombre es...</div>
+            <div class="username">Mr.Mustache</div>
+            <div class="user-game">
+                    <a routerLink="/hotel" class="button habbo text-upper text-bold">Jugar Ahora <span class="flashy-arrow"></span></a>
+            </div>   
+        </div>
+        <div class="actions">
+            <a routerLink="/settings" class="transparent"><span class="asset settings"></span></a>
+            <!--<a routerLink="/acp" class="transparent"><span class="asset-2 key"></span></a>-->
+            <a (click)="logout()" class="transparent"><span class="asset-2 close"></span></a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title"><span class="asset information"></span> Información</div>
+        <div class="section-content">
+            <div class="currency">
+                <div class="coin"><span class="asset credits"></span> <b>{{ Habbo.credits }}</b></div>
+                <div class="coin"><span class="asset duckets"></span> <b>{{ Habbo.duckets }}</b></div>
+                <div class="coin"><span class="asset diamonds"></span> <b>{{ Habbo.diamonds }}</b></div>
             </div>
-            <div class="box">
-                <div class="title m-0 fg-light"><span class="currency"></span> Monedero</div>
-                <div class="content fg-grayBlue">
-                    <div class="row">
-                        <div class="cell-2"><span class="credits"></span></div>
-                        <div class="cell"><b>{{ Habbo.credits }}</b> Créditos</div>
-                    </div>
-                    <div class="row">
-                        <div class="cell-2"><span class="duckets"></span></div>
-                        <div class="cell"><b>{{ Habbo.diamonds }}</b> Pixeles</div>
-                    </div>
-                    <div class="row">
-                        <div class="cell-2"><span class="diamonds"></span></div>
-                        <div class="cell"><b>{{ Habbo.duckets }}</b> Diamantes</div>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="title m-0 fg-light"><span class="groups"></span> Placas & Grupos</div>
-                <div class="content fg-grayBlue">
-                    No Badges Available
-                </div>
-            </div>
+            <div class="user-information"><span class="asset time"></span> <b>Última Conexión:</b> {{ Habbo.ParseUnixTime(Habbo.last_online) }}</div>
+            <div class="user-information"><span class="asset key"></span> <b>Cread@:</b> {{ Habbo.account_created }}</div>
+            <div class="user-information"><span class="asset star"></span> <b>Rango:</b> {{ Habbo.rank }}</div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title"><span class="asset groups"></span> Mis Placas</div>
+        <div class="section-content">
+            <div class="unavailable">Aún no disponible en aXDR Angular Alpha...</div>
         </div>
     </div>
 </div>

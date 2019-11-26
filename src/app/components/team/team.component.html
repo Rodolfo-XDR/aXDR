@@ -1,37 +1,62 @@
-<div class="row">
-    <div class="cell">
-        <div class="box rank" *ngFor="let rank of ranks">
-            <div class="title">
-                <span></span>
-                {{rank.name}}
-            </div>
-            <div class="content">
-                <div class="staff" *ngFor="let user of rank.users">
-                    <div class="avatar">
-                        <img src="{{Config.siteImages.avatars}}{{user.look}}&size=l&action=&direction=2&head_direction=2&gesture=sml" alt="">
-                    </div>
-                    <div class="information">
-                        <div class="row">
-                            <div class="cell">
-                                <div id="username">{{user.username}} <span class="status" id="{{user.online == '1' ? 'online' : 'offline'}}"></span></div>
-                                <div id="last_login">Última Conexión: {{ Habbo.ParseUnixTime(user.last_online) }}</div>
+<div @fadeIn class="container">
+    <div class="row">
+        <div class="pageTitle">
+            <span class="asset people"></span> Equipo {{ Config.siteName }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell-8">
+            <ul data-role="tabs"  data-cls-tabs="xdr-tabs" data-tabs-type="group" data-expand="true">
+                <li><a href="#staffs">Staffs</a></li>
+                <li><a href="#alfas">Alfas</a></li>
+            </ul>
+            <div class="team-content">
+                <div id="staffs">
+                    <div class="staff-section" *ngFor="let rank of ranks">
+                        <div class="staff-section-title">
+                            <div class="rank-badge">
+                                <img src="{{ Config.siteImages.badges }}/{{ rank.badge }}.gif" alt="">
+                            </div>
+                            <div class="rank-information">
+                                <div class="rank-name">{{ rank.name }}</div>
+                                <!--<div class="rank-id">ID: {{ rank.id }}</div>-->
+                            </div>
+                        </div>
+                        <div class="staff-section-content">
+                            <div class="no-staff" *ngIf="rank.users.length == 0">No hay usuarios con este rango disponibles...</div>
+                            <div class="user" *ngFor="let user of rank.users">
+                                <div class="user-avatar">
+                                    <div class="avatar asset">
+                                        <img src="{{Config.siteImages.avatars}}{{user.look}}&size=m&action=&direction=2&head_direction=2&gesture=sml&headonly=true" alt="">
+                                    </div>
+                                </div>
+                                <div class="information">
+                                    <div class="user-name">{{ user.username }}</div>
+                                    <div class="user-last-login">Última Conexión: {{ Habbo.ParseUnixTime(user.last_online) }}</div>
+                                </div>
+                                <div class="status">
+                                    <span class="asset {{user.online == '1' ? 'online' : 'offline'}}"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="cell-4">
-            <div class="box darkTransparent">
-                <div class="title fg-light">¿Qué son los Staffs?</div>
-                <div class="content fg-light">
-                    Son los que están detrás de Habbons, todos aquellos que pasan el día estrujándose la cabeza en busca de nuevas ideas y para sacar adelante todas esas locuras. Siempre atentos para que todo funcione sin problemas y, por encima de todo, que Habbons sea el lugar seguro del que sentirse orgullosos. Criticados, admirados,..... siempre tratan de hacerlo lo mejor posible.
-                    <br><br>
-                    Los puedes distinguir al pinchar sobre ellos, siempre llevan su respectiva placa bien visible.
-                    <br><br>
-                    ¡Conócelos!
+                <div id="alfas">
+                    Alfas
                 </div>
             </div>
+        </div>
+        <div class="cell">
+                <div class="xdr-info-box">
+                    <div id="title">¿Qué son los Staffs?</div>
+                    <div id="content">
+                        Son los que están detrás de {{ Config.siteName }}, todos aquellos que pasan el día estrujándose la cabeza en busca de nuevas ideas y para sacar adelante todas esas locuras. Siempre atentos para que todo funcione sin problemas y, por encima de todo, que {{ Config.siteName }} sea el lugar seguro del que sentirse orgullosos. Criticados, admirados,..... siempre tratan de hacerlo lo mejor posible.
+                        <br><br>
+                        Los puedes distinguir al pinchar sobre ellos, siempre llevan su respectiva placa bien visible.
+                        <br><br>
+                        ¡Conócelos!
+                    </div>
+                </div>
+        </div>
     </div>
 </div>

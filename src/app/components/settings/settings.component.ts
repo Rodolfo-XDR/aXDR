@@ -1,6 +1,5 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
-declare var Metro;
 
 @Component({
   selector: 'app-settings',
@@ -39,7 +38,7 @@ export class SettingsComponent extends BaseComponent implements OnInit {
     this.updateHabboSettings({'data': this.settings}).subscribe(data => {
       this.Habbo.settings.updateBackground(this.settings.web_background);
       this.Habbo.updateLocalStorage();
-      Metro.notify.create("Tus ajustes se han guardado correctamente.", "¡Con éxito!", { cls: "success" });
+      this.notify('Tus ajustes se han guardado correctamente.', 'Éxito', { cls: 'xdr' });
     },err => {});
   }
 
@@ -51,7 +50,7 @@ export class SettingsComponent extends BaseComponent implements OnInit {
     this.updateHabboSettings({'data': this.settings}).subscribe(data => {
       this.Habbo.settings.updateHeader(this.settings.web_header);
       this.Habbo.updateLocalStorage();
-      Metro.notify.create("Tus ajustes se han guardado correctamente.", "¡Con éxito!", { cls: "success" });
+      this.notify('Tus ajustes se han guardado correctamente.', 'Éxito', { cls: 'xdr' });
     },err => {});
   }
 }

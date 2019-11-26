@@ -9,27 +9,26 @@
 .xdr-pageContent {
   flex: 1 1 auto;
   padding: 10px 20px;
-  overflow: scroll;
   overflow-x: hidden;
 }
 
 .xdr-container.default {
   background: #1a2980;
   background: -webkit-linear-gradient(to top, #26d0ce, #1a2980);
-  background: linear-gradient(to top, #26d0ce, #1a2980);
+  background: url('../../../assets/images/bg_texture_1.out.png'), linear-gradient(to top, #26d0ce, #1a2980);
   color: #ffffff;
 }
 
 .xdr-container.dark {
   background: #232325;
   background: -webkit-linear-gradient(to top, #000621, #232325);
-  background: linear-gradient(to top, #000e4c, #232325);
+  background: url('../../../assets/images/bg_texture_1.out.png'), linear-gradient(to top, #000e4c, #232325);
   color: #ffffff;
 }
 
 .xdr-container.light {
   background: #9edbff;
-  background: linear-gradient(to top, #62beff, #9edbff);
+  background: url('../../../assets/images/bg_texture_1.out.png'), linear-gradient(to top, #62beff, #9edbff);
   color: #212121;
 }
 

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceInDown } from 'ng-animate';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-guest',
@@ -12,9 +13,13 @@ import { bounceInDown } from 'ng-animate';
     ])
   ]
 })
-export class GuestComponent implements OnInit {
 
-  constructor() { }
+export class GuestComponent extends BaseComponent implements OnInit {
+
+  constructor(injector : Injector)
+  {
+    super(injector);
+  }
 
   ngOnInit() {
   }

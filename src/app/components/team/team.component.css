@@ -1,53 +1,117 @@
-.rank {
+/*V2 Staffs*/
+.staff-section {
+    margin: 15px 0;
 }
 
-.rank > .title {
-    font-size: 20pt;
+.staff-section .staff-section-title {
+    display: flex;
+    background: linear-gradient(to bottom, #003686, #00213e);
+    border: 2px solid #003686;
+    border-bottom: none;
+    box-shadow: 0px 1px 4px 0px black;
+    padding: 5px 10px;
 }
 
-.staff {
-    width: 260px;
-    float: left;
-    margin: 5px 15px;
+.staff-section .staff-section-title .rank-badge {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
-.avatar {
-    overflow: hidden;
-    height: 135px;
+.staff-section .staff-section-title .rank-information {
+    display: flex;
+    flex-flow: column;
+    flex: 1 0 auto;
+    justify-content: center;
+    padding: 0px 10px;
 }
 
-.information {
-    background: #151515;
-    padding: 8px 15px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+.staff-section .staff-section-title .rank-information .rank-name {
+    font-size: 18pt;
+    font-family: 'Ubuntu Condensed';
+    color: #ffffff;
+    text-shadow: -1px 0px 4px black;
 }
 
-#username {
-    color: #008df1;
-    font-size: 15pt;
-    font-weight: bold;
-}
-
-#last_login {
+.staff-section .staff-section-title .rank-information .rank-id {
     font-size: 8pt;
-    color: rgba(255, 255, 255, 0.18);
+    font-weight: bold;
+    color: rgba(126, 196, 255, 0.2);
 }
 
-span.status {
-    background: url('../../../assets/images/ui-assets.png');
-    display: block;
-    float: right;
+.staff-section .staff-section-content {
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    color: #444444;
 }
 
-span.status#online {
-    background-position: 150px 300px;
-    height: 32px;
-    width: 27px;
+.no-staff {
+    background: rgba(234, 0, 32, 0.6);
+    padding: 5px 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 9pt;
+    border: 2px solid #71032c;
+    border-radius: 5px;
+    opacity: 0.7;
 }
 
-span.status#offline {
-    background-position: 60px 662px;
-    height: 28px;
-    width: 22px;
+.user {
+    display: flex;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #022035;
+    border-radius: 7px;
+    margin: 5px;
+}
+
+.user .user-avatar {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.user .user-avatar .avatar {
+    width: 57px;
+    height: 57px;
+    overflow: hidden;
+    background-position: -149px -151px;
+}
+
+.user .user-avatar .avatar img {
+    margin: -8px -5px;
+}
+
+.user .information {
+    display: flex;
+    flex: 1 0 auto;
+    flex-flow: column;
+    justify-content: center;
+    color: #fff;
+    margin: 15px 0;
+}
+
+.user .information .user-name {
+    font-family: 'Ubuntu Condensed';
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.user .information .user-last-login {
+    font-size: 9pt;
+}
+
+.user .status {
+    display: flex;
+    flex: 1 0 auto;
+    flex-flow: column;
+    padding: 5px;
+    align-items: flex-end;
 }

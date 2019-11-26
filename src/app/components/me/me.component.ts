@@ -8,11 +8,14 @@ import { BaseComponent } from '../base/base.component';
 })
 export class MeComponent extends BaseComponent implements OnInit {
 
+  public OnlineCount : number = 0;
+
   constructor(injector : Injector) {
     super(injector);
   }
 
   ngOnInit() {
+    this.onlineCount.subscribe(v => this.OnlineCount = v);
   }
 
 }

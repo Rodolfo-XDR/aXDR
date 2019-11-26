@@ -1,12 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { HttpClientModule  } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RecaptchaModule } from 'ng-recaptcha';
+import { NgMetro4Module } from 'ng-metro4';
 
 import { ConfigService } from './shared/config.service';
+import { LoaderService } from './shared/loader.service';
+
+import { LoaderInterceptor } from './shared/loader.interceptor';
 
 import { AppComponent } from './components/app/app.component';
 import { BaseComponent } from './components/base/base.component';
@@ -29,6 +33,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { SideComponent } from './components/side/side.component';
 import { TeamComponent } from './components/team/team.component';
 import { TopComponent } from './components/top/top.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { TestComponent } from './components/test/test.component';
 
 const appConfig = (config : ConfigService) => {
   return() => {
@@ -58,7 +64,9 @@ const appConfig = (config : ConfigService) => {
     HeaderComponent,
     SideComponent,
     TeamComponent,
-    TopComponent
+    TopComponent,
+    LoaderComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +74,8 @@ const appConfig = (config : ConfigService) => {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RecaptchaModule
+    RecaptchaModule,
+    NgMetro4Module
   ],
   providers: [
     ConfigService,
@@ -75,6 +84,12 @@ const appConfig = (config : ConfigService) => {
       useFactory: appConfig,
       multi: true,
       deps: [ConfigService]
+    },
+    LoaderService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor, 
+      multi: true 
     }
   ],
   bootstrap: [AppComponent]

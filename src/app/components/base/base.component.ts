@@ -9,6 +9,8 @@ import { HabboService } from 'src/app/shared/habbo.service';
 import { Habbo } from 'src/app/models/habbo.model';
 import { MenuService } from 'src/app/shared/menu.service';
 import { ConfigService } from 'src/app/shared/config.service';
+import { SideService } from 'src/app/shared/side.service';
+import { NotifyService } from 'ng-metro4';
 
 @Component({
   selector: '',
@@ -21,17 +23,25 @@ export class BaseComponent {
   private sessionService : SessionService;
   private authService : AuthenticationService;
   private clientService : ClientService;
+  private sideService : SideService;
   private habboService : HabboService;
   private menuService : MenuService
   private configService : ConfigService;
+  private notifyService : NotifyService;
 
   constructor(private injector : Injector) {
     this.configService = this.injector.get(ConfigService);
     this.sessionService = this.injector.get(SessionService);
     this.authService = this.injector.get(AuthenticationService);
     this.clientService = this.injector.get(ClientService);
+    this.sideService = this.injector.get(SideService);
     this.habboService = this.injector.get(HabboService);
     this.menuService = this.injector.get(MenuService);
+    this.notifyService = this.injector.get(NotifyService);
+
+    this.notifyService.setup({
+      timeout: 5000
+    });
   }
 
   get Config()
@@ -75,6 +85,10 @@ export class BaseComponent {
     return this.clientService.ClientShow;
   }
 
+  get sideShow() {
+    return this.sideService.SideShow;
+  }
+
   get menuTabs() {
     return this.menuService.Tabs;
   }
@@ -93,5 +107,10 @@ export class BaseComponent {
 
   updateHabboSettings(data) {
     return this.habboService.updateHabboSettings(data);
+  }
+
+  notify(message : string, title : string, options : any)
+  {
+    this.notifyService.create(message, title, options);
   }
 }

@@ -20,6 +20,30 @@
                     </div>
                 </div>
             </form>
+            <m4-dialog #about class="xdr-dialog" width="100%" [overlay]="true" overlay-color="#000000" [overlay-alpha]="0.8">
+                <div dialog-title>aXDR Angular</div>
+                <div dialog-content>
+                    Current Build: <b>Alpha 25112019126</b>
+                    <br>
+                    Author: <b>Mr.Mustache</b>
+                    <br>
+                    License: <b>{{ Config.siteName }}</b>
+                    <br>
+                    <i>Still on development...</i>
+                    <br>
+                    <li>Interactive Side Bar!</li>
+                    <li>Administrator Control Panel INTRODUCTION!</li>
+                    <li>ALL WEB DESIGN IMPROVEMENT! (HEADER, LOGIN, REGISTER, ME, COMMUNITY, TOPS, STAFF, EVERYTHING!)</li>
+                    <li>Profile Pages INTRODUCTION!</li>
+                    <li> PAPERS INTRODUCTION! (Privacy, Cookies, Terms & Conditions)</li>
+                    <li>SOCKETS INTRODUCTION!</li>
+                    <li>Ensure that you can open the WEB multiple times but don't load the client until the user clicks on it.</li>
+                </div>
+                <div dialog-actions>
+                    <button class="button habbo red js-dialog-close">Cerrar</button>
+                </div>
+            </m4-dialog>
+            <button class="button habbo blue" (click)="about.open()">Acerca de</button>
         </div>
     </div>
 </div>

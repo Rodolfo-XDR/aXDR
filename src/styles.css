@@ -5,6 +5,11 @@
 	src: url("./assets/fonts/Ubuntu-Light.ttf") format('truetype');
 }
 
+@font-face{
+	font-family: 'Ubuntu Condensed';
+	src: url("./assets/fonts/Ubuntu-Condensed.ttf") format('truetype');
+}
+
 html, body {
     font-family: 'Ubuntu Light';
     height: 100% !important;
@@ -66,25 +71,402 @@ body {
     color: #ffffff;
 }
 
-.promo {
-    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.4);
-    height: 215px;
-    margin: 5px 10px 25px;
-    border-radius: 20px;
-    padding: 15px;
+hr {
+    border-width: 0 0 8px;
+    clear: both;
+    margin: 1.35em auto;
+    max-width: 100%;
+    border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1"><circle fill="hsla(0, 0%, 0%, 0.3)" cx="1" cy="0.3" r="0.3"/></svg>') 0 0 100% repeat;
+    border-style: inset;
+    background-color: transparent;
 }
 
-.promo .title {
-    font-size: 18pt;
+.asset { 
+    background: url('./assets/images/ui-assets.png');
+}
+
+.asset-2 {
+    background: url('./assets/images/ui-assets-2015.png');
+}
+
+.asset-2.credits-1 {
+    width: 100px;
+    height: 100px;
+    background-position: -298px -5px;
+}
+
+.asset-2.credits-2 {
+    width: 100px;
+    height: 100px;
+    background-position: -197px 0px;
+}
+
+.asset-2.credits-3 {
+    width: 100px;
+    height: 100px;
+    background-position: -100px -180px;
+}
+
+.asset-2.credits-4 {
+    width: 100px;
+    height: 100px;
+    background-position: 0px -170px;
+}
+
+.asset-2.credits-5 {
+    width: 100px;
+    height: 100px;
+    background-position: 0px -75px;
+}
+
+.asset-2.credits-6 {
+    width: 100px;
+    height: 100px;
+    background-position: 0px -275px;
+}
+
+.asset-2.credits-7 {
+    width: 100px;
+    height: 100px;
+    background-position: -100px -275px;
+}
+
+.asset-2.alert {
+    width: 11px;
+    height: 46px;
+    margin: 18px 2px;
+    background-position: 11px -46px;
+}
+
+.asset-2.close {
+    width: 16px;
+    height: 18px;
+    background-position: 180px 83px;
+}
+
+.asset-2.key {
+    width: 18px;
+    height: 21px;
+    background-position: 290px 19px;
+}
+
+.asset.settings {
+    height: 30px;
+    width: 28px;
+    background-position: 148px -530px;
+}
+
+.asset.settings:hover{
+    height: 30px;
+    width: 28px;
+    background-position: 150px -693px;
+}
+
+.asset.information {
+    height: 30px;
+    width: 28px;
+    background-position: 106px -261px;
+    margin: -4px 0;
+}
+
+.asset.time {
+    width: 20px;
+    height: 20px;
+    background-position: 54px -325px;
+    margin: -5px 5px;
+}
+
+.asset.key {
+    width: 22px;
+    height: 23px;
+    background-position: 71px -566px;
+    margin: -8px 5px;
+}
+
+.asset.star {
+    width: 22px;
+    height: 23px;
+    background-position: 71px -623px;
+    margin: -8px 5px;
+}
+
+.asset.groups {
+    height: 16px;
+    width: 22px;
+    background-position: 77px 803px;
+}
+
+.asset.close {
+    width: 17px;
+    height: 19px;
+    background-position: -287px -93px;
+    margin: -8px 5px;
+}
+
+.asset.hideSide {
+    width: 19px;
+    height: 20px;
+    background-position: 33px -95px;
+    margin: 3px 0px 0 0;
+}
+
+.asset.people {
+    width: 42px;
+    height: 53px;
+    background-position: 225px -664px;
+    margin: 0px 5px;
+}
+
+.asset.online {
+    background-position: 150px 300px;
+    height: 32px;
+    width: 27px;
+}
+
+.asset.offline {
+    background-position: 60px 662px;
+    height: 28px;
+    width: 22px;
+}
+
+a.transparent {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+a.transparent:focus {
+    outline: 0;
+}
+
+button.icon {
+    background: none;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+button.hideBar {
+    background: #197682;
+    padding: 0 6px;
+    border-radius: 3px;
+    border: 2px solid #1e4d4f;
+    cursor: pointer;
+    outline: none;
+}
+
+button.hideBar:hover {
+    background: #3b919c;
+}
+
+button.hideBar:active {
+    background: #135861;
+}
+
+.button.habbo {
+    color: #ffffff;
+    background-color: #368e12;
+    border: 2px solid #74bd2a;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.6);
+    border-radius: 0.25rem;
+    font-family: Ubuntu Light;
     font-weight: bold;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin: 5px 0px;
+    height: auto;
 }
 
-.promo .description {
+.button.habbo.blue {
+    background-color: #00608e;
+    border: 2px solid #0499e4;
+}
+
+.button.habbo.red {
+    background-color: #bb0539;
+    border: 2px solid #940d24;
+}
+
+.button.habbo:hover {
+    background-color: #4ab31f;
+}
+
+.button.habbo.blue:hover {
+    background-color: #0777ad;
+}
+
+.button.habbo.red:hover {
+    background-color: #da0b46;
+}
+
+.client, .hotel {
+    height: 100%;
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.hotel {
+    left: 0;
+    background-color: #000;
+    z-index: 600;
+}
+
+.xdr-info-box {
+    background: rgba(0,0,0,0.7);
+    border-radius: 8px;
     color: #ffffff;
-    font-size: 10pt; 
+    font-family: 'Ubuntu Condensed';
+    padding: 10px;
+}
+
+.mini-promo {
+    background-position: 280px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    height: 260px;
+    margin: 10px 15px;
+    overflow: hidden;
+    width: 280px;
+}
+
+.mini-promo .information {
+    color: #ffffff;
+    display: flex;
+    flex: 1 0 auto;
+    flex-flow: column;
+    font-family: 'Ubuntu Condensed';
+    padding: 5px;
+    margin: -75px 0;
+    justify-content: flex-end;
+    transition: all 700ms;
+}
+
+.mini-promo:hover .information {
+    background: linear-gradient(to top, black 13%, transparent);
+    margin: 0;
+    transition: all 700ms;
+}
+
+.mini-promo .information .title {
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+    font-size: 14pt;
+}
+
+.mini-promo .information .description {
+
+}
+
+.mini-promo .information .actions {
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.mini-promo .information .actions a {
+    text-decoration: underline;
+}
+
+.notify.xdr {
+    border-radius: 6px;
+    margin: 14px;
+    font-family: Ubuntu Condensed;
+    border: 1px solid #006300;
+    background: rgba(96, 169, 23, 0.6);
+    color: #ffffff;
+}
+
+.notify.xdr .notify-title {
+    font-size: 17pt;
+}
+
+.pageTitle {
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    font-size: 25pt;
+    font-family: 'Ubuntu Condensed';
+}
+
+.xdr-box.alert {
+    font-family: 'Ubuntu Condensed';
+}
+
+.xdr-box.alert .title {
+    display: inline-flex;
+    font-size: 40pt;
+}
+
+.xdr-box.alert .content {
+    font-size: 15pt;
+    border-left: 4px solid;
+    padding: 5px 10px;
+}
+
+.xdr-info-box #title {
+    font-size: 20pt;
+    margin: 5px 2px;
+}
+
+.xdr-info-box #content {
+    font-size: 11pt;
+    padding: 10px;
+}
+
+.xdr-dialog {
+    background: #151515;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.xdr-dialog .dialog-title {
+    font-size: 18pt;
+    font-family: 'Ubuntu Condensed';
+    border: none;
+}
+
+.xdr-dialog .dialog-content {
+    font-size: 12pt;
+    border: none;
+}
+
+.xdr-dialog .dialog-actions {
+    border: none;
+}
+
+.xdr-tabs {
+    background: none;
+    padding: 10px;
+}
+
+.xdr-tabs ul.tabs-list {
+    border: none;
+}
+
+.xdr-tabs ul.tabs-list li, .xdr-tabs.tabs-expand:not(.vertical):not(.bottom) ul.tabs-group li {
+    background: rgba(3, 29, 47, 0.5);
+    color: #36789f;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 10pt;
+    border-radius: 7px;
+    border: 2px solid transparent;
+}
+
+.xdr-tabs ul.tabs-list li:hover, .xdr-tabs.tabs-expand:not(.vertical):not(.bottom) ul.tabs-group li:hover {
+    background: #15608c;
+    color: #55b3e4;
+    border: 2px solid #257eac;
+}
+
+.xdr-tabs ul.tabs-list li.active, .xdr-tabs.tabs-expand:not(.vertical):not(.bottom) ul.tabs-group li.active {
+    background: rgba(4, 85, 142, 0.5);
+    border: 2px solid #2a79a1;
+    color: #fff;
+}
+
+.xdr-tabs ul.tabs-list li a {
+    background: none;
 }
 
 ::-webkit-scrollbar {
@@ -112,355 +494,4 @@ body {
 
 ::-webkit-scrollbar-corner {
     background-color: transparent;
-}
-
-hr {
-    border-width: 0 0 8px;
-    clear: both;
-    margin: 1.35em auto;
-    max-width: 100%;
-    border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1"><circle fill="hsla(0, 0%, 0%, 0.3)" cx="1" cy="0.3" r="0.3"/></svg>') 0 0 100% repeat;
-    border-style: inset;
-    background-color: transparent;
-}
-
-.box {
-    border-radius: 3px;
-    padding: 10px;
-    margin: 0 0 10px;
-}
-.box.darkTransparent {
-    background: rgba(16, 16, 16, 0.55);
-}
-.box > .title {
-    font-size: 14pt;
-    font-weight: bold;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 1px 0px 0px rgba(93, 93, 93, 0.2);
-    padding: 5px 5px;
-}
-.box > .content {
-    font-size: 10pt;
-    padding: 10px;
-    display: inline-block;
-}
-
-.button.habbo {
-    color: #ffffff;
-    background-color: #1f5409;
-    border: 2px solid #74bd2a;
-    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.5);
-    font-family: 'Ubuntu Light';
-    border-radius: 0.25rem;
-}
-
-.button.habbo.blue {
-    background-color: #00608e;
-    border: 2px solid #0499e4;
-}
-
-.button.habbo.red {
-    background-color: #bb0539;
-    border: 2px solid #940d24;
-}
-
-.button.habbo:hover {
-    background-color: #296d0d;
-}
-
-.button.habbo.blue:hover {
-    background-color: #0777ad;
-}
-
-.button.habbo.red:hover {
-    background-color: #da0b46;
-}
-
-.client, .hotel {
-    height: 100%;
-    top: 0;
-    width: 100%;
-    position: absolute;
-}
-
-.hotel {
-    left: 0;
-    background-color: #000;
-    z-index: 600;
-}
-
-.client {
-    left: -9999px;
-}
-
-.client--visible {
-    left: 0;
-}
-
-.client__buttons {
-    left: 12px;
-    position: absolute;
-    top: 12px;
-    z-index: 630;
-}
-
-.client__buttons .client__close, .client__buttons button {
-    line-height: 1.2;
-    text-align: center;
-    color: #000;
-    font-size: 12px;
-    border-style: solid;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-}
-
-.client__buttons button {
-    box-shadow: 0 3px 0 1px rgba(0,0,0,.3);
-    background-color: #ffb900;
-    border-color: #ffea00;
-    padding: 6px 12px;
-    border-radius: 5px;
-    border-width: 2px;
-    display: block;
-    float: left;
-}
-
-.client__buttons .client__close, .hotel-button {
-    filter: drop-shadow(-1px 4px 0 rgba(0, 0, 0, .3));
-}
-
-.client__buttons .client__close, .client__buttons button {
-    line-height: 1.2;
-    text-align: center;
-    color: #000;
-    font-size: 12px;
-    border-style: solid;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-}
-
-.client__buttons .client__close {
-    display: inline-block;
-    background-color: #ffb900;
-    border-color: #ffea00;
-    border-radius: 0 5px 5px 0;
-    border-width: 2px 2px 2px 1px;
-    box-shadow: none;
-    position: relative;
-    margin-left: 14px;
-    padding: 5px 6px;
-}
-
-.client__buttons .client__close:after, .client__buttons .client__close:before {
-    content: '';
-    position: absolute;
-    display: block;
-    border-style: solid;
-}
-
-.client__buttons .client__close:before {
-    border-width: 15px;
-    top: -2px;
-    border-color: transparent #ffea00 transparent transparent;
-    left: -31px;
-}
-
-.client__buttons .client__close:hover:before {
-    border-color: transparent #fffd70 transparent transparent;
-}
-
-.client__buttons .client__close:after {
-    border-width: 13px;
-    top: 0;
-    border-color: transparent #ffb900 transparent transparent;
-    left: -26px;
-}
-
-.client__buttons .client__close:hover:after {
-    border-color: transparent #ffd400 transparent transparent;
-}
-
-.client__close__expand {
-    transition: width .15s ease-out;
-    float: left;
-    overflow: hidden;
-}
-
-.client__close__text {
-    line-height: 16px;
-    padding-left: 6px;
-}
-
-.client__buttons .client__fullscreen {
-    padding-left: 6px;
-    padding-right: 6px;
-}
-
-.client__buttons button:first-child, .client__buttons button:not(:first-child):not(:last-child) {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.client__buttons button:not(:last-child) {
-    margin-right: 4px;
-}
-
-.client__buttons button:last-child, .client__buttons button:not(:first-child):not(:last-child) {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-}
-
-.client__buttons .client__close:active, .client__buttons .client__close:hover {
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-}
-
-.client__buttons .client__close:hover {
-    background-color: #ffd400;
-    border-color: #fffd70;
-}
-
-.client__buttons button:hover {
-    background-color: #ffd400;
-    border-color: #fffd70;
-}
-
-.icon {
-    display: inline-block;
-    font-style: normal;
-}
-
-.icon--habbo {
-    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/sprite.56f427a4.png);
-    background-position: -511px -413px;
-    width: 16px;
-    height: 16px;
-}
-
-.icon--fullscreen {
-    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/sprite.56f427a4.png);
-    background-position: -511px -447px;
-    width: 15px;
-    height: 14px;
-}
-
-.client__close__icon {
-    float: left;
-}
-
-.client__fullscreen__icon {
-    display: block;
-}
-
-.habbo-client-closed, .habbo-client-error {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    display: -ms-flexbox;
-    padding: 48px 12px;
-    z-index: 610;
-    left: 0;
-}
-
-.habbo-client-error {
-    -ms-flex-align: center;
-    align-items: center;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.client-error__background-frank {
-    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/backgrounds/flash_error_bg.57539aa2.png);
-    display: block;
-    height: 368px;
-    padding: 80px 17px 35px 242px;
-    position: relative;
-    width: 639px;
-}
-
-.client-error__text-contents {
-    height: 253px;
-    position: absolute;
-    text-align: left;
-}
-
-.client-error__hotel-button-div {
-    bottom: 30px;
-    float: right;
-    position: absolute;
-    right: 30px;
-}
-
-.client-error__title {
-    text-align: left;
-    font-size: 36px;
-    color: #fff;
-}
-
-.client-error__text {
-    color: #7ecaee;
-}
-
-.hotel-button {
-    display: inline-block;
-    line-height: 1.2;
-    text-align: center;
-    background-color: #ffb900;
-    border-color: #ffea00;
-    color: #000;
-    border-radius: 5px 0 0 5px;
-    border-width: 2px 1px 2px 2px;
-    border-style: solid;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-    box-shadow: none;
-    position: relative;
-    margin-right: 20px;
-    margin-top: -3px;
-    padding: 6px 12px 6px 24px;
-}
-
-.hotel-button__text {
-    position: relative;
-    padding-right: 27px;
-    text-align: right;
-    line-height: 26px;
-}
-
-.hotel-button__text:before {
-    background-image: url(https://images.habbo.com/habbo-web/america/es/assets/images/sprite.56f427a4.png);
-    background-position: -242px -434px;
-    width: 21px;
-    height: 26px;
-    content: '';
-    display: block;
-    margin-top: -13px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-}
-
-.hotel-button:after, .hotel-button:before {
-    border-style: solid;
-    position: absolute;
-    display: block;
-    content: '';
-}
-
-.hotel-button:before {
-    border-width: 21px;
-    top: -2px;
-    border-color: transparent transparent transparent #ffea00;
-    right: -43px;
-}
-
-.hotel-button:after {
-    border-width: 19px;
-    top: 0;
-    border-color: transparent transparent transparent #ffb900;
-    right: -38px;
 }

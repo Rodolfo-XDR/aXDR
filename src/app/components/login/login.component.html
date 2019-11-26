@@ -1,5 +1,5 @@
 <div @fadeIn class="row h-100 m-0">
-    <div class="cell-4">
+    <div class="cell">
         <div class="box">
             <div class="display2 fg-light text-bold">Conéctate.</div>
             <form  #loginForm="ngForm" (ngSubmit)="signIn()" data-role="validator" action="javascript:" data-interactive-check="true">
@@ -24,7 +24,7 @@
             </form>
         </div>
     </div>
-    <div class="cell hotel-view">
+    <div class="cell-8 hotel-view">
         <div id="slogan" class="fg-white">
             <h1 class="text-bold">Bienvenido a {{ Config.siteName }},</h1>
             <h4 class="text-bold">Un lugar extraño con gente genial.</h4>
