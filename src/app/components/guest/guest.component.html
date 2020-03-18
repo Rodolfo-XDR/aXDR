@@ -1,32 +1,25 @@
-<div class="container-fluid guest-body p-0">
-    <div class="grid mb-0 h-100">
-        <div class="row">
-            <div class="cell p-0 mb-5">
-                <div @bounceDown class="guest-header">
-                    <div id="border-left"></div>
-                    <div id="border-right"></div>
-                    <div class="header-container">
-                        <a routerLink="/" id="logo"></a>
-                        
-                    </div>
-                    <div id="top-bar-triangle"></div>
-                    <div id="top-bar-triangle-border"></div>
-                </div>
-            </div>
+<div class="container-fluid xdr-guest p-0 h-100 d-flex flex-column">
+    <div @bounceDown class="xdr-guest-header">
+        <div id="border-left"></div>
+        <div id="border-right"></div>
+        <div class="content">
+            <a routerLink="/" id="logo"></a>
+            
         </div>
-        <div class="row guest-container">
-            <div class="container-fluid p-0">
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-        <div class="row">
-            <div class="guest-footer">
-                <div id="footer-content">
-                    <div id="footer"><a href="http://localhost/papers/termsAndConditions" target="_new">Términos y Condiciones</a> / <a href="http://localhost/papers/privacy" target="_new">Política de Privacidad</a> / <a href="http://localhost/papers/cookies" target="_new">Política de Cookies</a></div>
-                    <div id="copyright">2019 aXDR API. {{ Config.siteName }} is not affiliated with, endorsed, sponsored, or specifically approved by Sulake Corporation Oy or its Affiliates. <br>
-                        All the content belongs to Sulake Corporation Oy. All rights reserved.</div>                   
-                </div>
-            </div>
+        <div id="top-bar-triangle"></div>
+        <div id="top-bar-triangle-border"></div>
+    </div>
+    <div class="xdr-guest-middle">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="xdr-guest-footer">
+        <div class="content">
+            <div id="links">
+                <a [routerLink]="['/papers/terms-of-service']">Términos y Condiciones</a> / 
+                <a [routerLink]="['/papers/privacy-policy']">Política de Privacidad</a> / 
+                <a [routerLink]="['/papers/cookies-policy']">Política de Cookies</a></div>
+            <div id="copyright">2019 aXDR API. {{ Config.siteName }} is not affiliated with, endorsed, sponsored, or specifically approved by Sulake Corporation Oy or its Affiliates. <br>
+                All the content belongs to Sulake Corporation Oy. All rights reserved.</div>                   
         </div>
     </div>
 </div>

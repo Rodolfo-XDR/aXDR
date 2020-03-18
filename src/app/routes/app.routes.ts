@@ -8,6 +8,8 @@ import { USER_ROUTES } from './user.routes';
 import { GUEST_ROUTES } from './guest.routes';
 import { UnauthGuard } from '../guards/unauth.guard';
 import { AuthGuard } from '../guards/auth.guard';
+import { PapersComponent } from '../components/papers/papers.component';
+import { PAPERS_ROUTES } from './papers.routes';
 
 export const APP_ROUTES: Routes = [
     { 
@@ -28,6 +30,11 @@ export const APP_ROUTES: Routes = [
             title: Routing.USER.title 
         },
         canActivateChild: [AuthGuard]
+    },
+    {
+        path: 'papers',
+        component: PapersComponent,
+        children: PAPERS_ROUTES
     },
     { 
         path: '**', 

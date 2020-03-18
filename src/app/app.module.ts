@@ -35,6 +35,10 @@ import { TeamComponent } from './components/team/team.component';
 import { TopComponent } from './components/top/top.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { TestComponent } from './components/test/test.component';
+import { PapersComponent } from './components/papers/papers.component';
+import { TermsComponent } from './components/terms/terms.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { CookiesComponent } from './components/cookies/cookies.component';
 
 const appConfig = (config : ConfigService) => {
   return() => {
@@ -66,7 +70,11 @@ const appConfig = (config : ConfigService) => {
     TeamComponent,
     TopComponent,
     LoaderComponent,
-    TestComponent
+    TestComponent,
+    PapersComponent,
+    TermsComponent,
+    PrivacyComponent,
+    CookiesComponent
   ],
   imports: [
     BrowserModule,

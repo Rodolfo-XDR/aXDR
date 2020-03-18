@@ -10,7 +10,19 @@
             <i class="client__fullscreen__icon icon icon--fullscreen"></i>
         </button>
     </div>
-
+    <div [ngClass]="{'d-none' : !showRadio}" id="radio" class="plugin">
+        <div class="client-box modern">
+            <audio id="stream" controls preload="none" style="width: 200px; outline: none;">
+                <source src="http://equinox.shoutca.st:8481/;" type="audio/mpeg">
+            </audio>
+            <a (click)="toggleRadio()"><img src="../../../assets/images/close.png" /></a>
+        </div>
+    </div>
+    <div [ngClass]="{'d-none' : showRadio}" id="radio-controls" class="plugin">
+        <div class="client-box modern">
+            <a (click)="toggleRadio()"><span class="asset discotek"></span></a>
+        </div>
+    </div>
     <div class="habbo-client-error"  *ngIf="!flashEnabled">
         <div class="client-error__background-frank">
             <span class="client-error__text-contents">

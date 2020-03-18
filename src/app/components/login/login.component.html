@@ -1,34 +1,75 @@
-<div @fadeIn class="row h-100 m-0">
-    <div class="cell">
-        <div class="box">
-            <div class="display2 fg-light text-bold">Conéctate.</div>
+<div class="row h-100">
+    <div class="login-box">
+        <div class="title">Conéctate.</div>
+        <div class="content">
             <form  #loginForm="ngForm" (ngSubmit)="signIn()" data-role="validator" action="javascript:" data-interactive-check="true">
-                  <div *ngIf="isError" class="bg-darkRed fg-white rounded text-small text-bold m-2 p-1">{{errorMsg}}</div>
-                  <div class="form-group">
-                    <label class="fg-lightGrayBlue text-bold">Usuario</label>
-                    <input class="arctic fg-grayBlue" [(ngModel)]="credentials.identification" name="credentials.identification" type="text" autocomplete="on" data-role="input" data-validate="required">
+                <div *ngIf="isError" class="error">{{errorMsg}}</div>
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input class="arctic" [(ngModel)]="credentials.identification" name="credentials.identification" type="text" autocomplete="on" data-role="input" data-validate="required">
                     <span class="invalid_feedback">
                         ¡Oops! Ingresa tu usuario correctamente...
                     </span>
                 </div>
                 <div class="form-group">
-                    <label class="fg-lightGrayBlue text-bold">Contraseña</label>
-                    <input class="arctic fg-grayBlue" [(ngModel)]="credentials.password" name="credentials.password" type="password" autocomplete="on" data-role="input" data-validate="required">
+                    <label>Contraseña</label>
+                    <input class="arctic" [(ngModel)]="credentials.password" name="credentials.password" type="password" autocomplete="on" data-role="input" data-validate="required">
                     <span class="invalid_feedback">
                         ¡Oops! Ingresa tu contraseña correctamente...
                     </span>
                 </div>
                 <div class="form-group">
                     <button class="button habbo" type="submit">Ingresar</button>
+                    <a [routerLink]="['/register']" class="button habbo blue fg-white ml-2">Registrarme</a>
                 </div>
             </form>
         </div>
     </div>
-    <div class="cell-8 hotel-view">
-        <div id="slogan" class="fg-white">
-            <h1 class="text-bold">Bienvenido a {{ Config.siteName }},</h1>
-            <h4 class="text-bold">Un lugar extraño con gente genial.</h4>
-            <button routerLink="/register" class="button habbo blue">¡Registrarme!</button>
+    <div class="cell">
+        <div class="login-image"></div>
+        <div class="box">
+            <div class="title">Bienvenido a {{ Config.siteName }} Hotel</div>
+            <div class="info-alert">Ahora mismo nos acompañan <b>{{ OnlineCount }}</b> usuarios dentro del hotel</div>
+            <br>
+            <div class="info-alert red">{{ Config.siteName }} Hotel, abre sus puertas para divertir a todos los usuarios hispanohablantes!</div>
+            <br>
+            <div class="info-alert green">Un Hotel lleno de aventuras, juegos, romances, ¡y mucha DIVERSIÓN!</div>
         </div>
     </div>
-  </div>
+</div>
+<div class="row">
+    <div class="box">
+        <div class="title">
+            Últimas Noticias
+        </div>
+        <div class="content">
+            <div class="mini-promo" style="background: url(https://images.habbo.com/web_images/habbo-web-articles/lpromo_referral.png) 280px 0">
+                <div class="information">
+                    <div class="title">For on this day of all days a giant hand brought... stuff?</div>
+                    <div class="description">Limited text taken from the article will be displayed here in two lines of text.</div>
+                    <div class="actions">
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-promo" style="background: url(https://images.habbo.com/web_images/habbo-web-articles/lpromo_2016doublecredits.png) 280px 0">
+                <div class="information">
+                    <div class="title">For on this day of all days a giant hand brought... stuff?</div>
+                    <div class="description">Limited text taken from the article will be displayed here in two lines of text.</div>
+                    <div class="actions">
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-promo" style="background: url(https://images.habbo.com/web_images/habbo-web-articles/lpromo_gen_baw_3.png) 280px 0">
+                <div class="information">
+                    <div class="title">For on this day of all days a giant hand brought... stuff?</div>
+                    <div class="description">Limited text taken from the article will be displayed here in two lines of text.</div>
+                    <div class="actions">
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -286,3 +286,31 @@
     border-color: transparent transparent transparent #ffb900;
     right: -38px;
 }
+
+.plugin {
+    position: absolute;
+}
+
+#radio, #radio-controls {
+    top: -2px;
+    right: 200px;
+    z-index: 630;
+}
+
+.client-box {
+    cursor: pointer;
+    background-color: rgba(44,44,44,.68);
+    border: 2px solid rgba(157,157,157,.42);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.73);
+    font-size: 12pt;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.client-box.modern {
+    background-color: #f1f3f4;
+    border: 2px solid rgba(157, 157, 157, 0.7);
+}

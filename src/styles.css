@@ -229,6 +229,13 @@ hr {
     width: 22px;
 }
 
+.asset.discotek {
+    background-position: 150px 269px;
+    height: 33px;
+    width: 30px;
+    display: flex;
+}
+
 a.transparent {
     background: transparent;
     border: none;
@@ -310,6 +317,30 @@ button.hideBar:active {
     z-index: 600;
 }
 
+.info-alert {
+    font-family: 'Ubuntu Condensed';
+    font-size: 12pt;
+    color: #002b44;
+    display: inline-block;
+    background: #0094ea;
+    border: 2px solid #52c0ff;
+    border-radius: 5px;
+    padding: 4px 10px;
+    margin: 10px auto;
+}
+
+.info-alert.green {
+    color: #102100;
+    background: #448e00;
+    border: 2px solid #5eb50e;
+}
+
+.info-alert.red {
+    color: #27000d;
+    background: #ea004c;
+    border: 2px solid #ff4582;
+}
+
 .xdr-info-box {
     background: rgba(0,0,0,0.7);
     border-radius: 8px;
@@ -347,14 +378,14 @@ button.hideBar:active {
     transition: all 700ms;
 }
 
-.mini-promo .information .title {
+.mini-promo .information > .title {
     text-transform: uppercase;
     text-shadow: 1px 1px 2px black;
     font-size: 14pt;
 }
 
-.mini-promo .information .description {
-
+.mini-promo .information > .description {
+    font-size: 12pt;
 }
 
 .mini-promo .information .actions {

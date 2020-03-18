@@ -34,6 +34,8 @@ export class LoginComponent extends BaseComponent implements OnInit {
   public errorMsg = '';
   private ban = null;
 
+  public OnlineCount : number = 0;
+
   constructor(injector : Injector, private titleService : Title) {
     super(injector);
     this.titleService.setTitle("¡Haz amig@s, diviértete y date a conocer! - " + this.Config.siteName);
@@ -41,6 +43,8 @@ export class LoginComponent extends BaseComponent implements OnInit {
       identification: null,
       password: null
     }
+
+    this.onlineCount.subscribe(v => this.OnlineCount = v);
   }
 
   ngOnInit() {

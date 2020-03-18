@@ -19,6 +19,7 @@ export class ClientComponent extends BaseComponent implements OnInit {
   private sso : string = null;
   private message : string = 'Getting Ready';
 
+  public showRadio : boolean = true;
 
   public clientOpen : boolean;
 
@@ -94,8 +95,8 @@ export class ClientComponent extends BaseComponent implements OnInit {
       "processlog.enabled"            : "1",
       "flash.client.url"              : this.Config.SWF.base,
       "flash.client.origin"           : "popup",
-      "client.allow.cross.domain"     : "1",
-      "client.notify.cross.domain"    : "0"
+      "client.allow.cross.domain"     : "0",
+      "client.notify.cross.domain"    : "1"
     };
 
     let params = {
@@ -163,6 +164,10 @@ export class ClientComponent extends BaseComponent implements OnInit {
   goBack() {
     //TODO Check if this.location is '/hotel' if yes, then return to default '/me'
     this.location.back();
+  }
+
+  toggleRadio() {
+    this.showRadio = !this.showRadio;
   }
 
 }

@@ -1,44 +1,30 @@
-.guest-body{
+/* V2 aXDR GUEST */
+.xdr-guest {
     background: #070d19;
     background: radial-gradient(circle at center, #00528c, #070d19);
-    flex: 1 1 auto;
-    flex-flow: row;
-    height: 100%;
-    overflow: hidden;
 }
 
-.guest-container {
-    flex: 1 1 auto;
-    overflow: auto;
-    margin: 0;
-}
-
-.guest-header, .guest-footer {
-    top: 0;
-    min-height: 99px;
-    width: 100%;
+.xdr-guest-header, .xdr-guest-footer {
     background: #101016;
     background: rgba(16,16,22,0.85);
-    z-index: 999;
+    width: 100%;
 }
 
-.guest-footer {
-    height: 107px;
-    border-top: 1px solid #7aa3b9;
+.xdr-guest-header {
 }
 
-.guest-row {
-    margin-right: 0;
-    margin-left: 0;
+.xdr-guest-header .content {
+    display: flex;
+    padding: 15px 10px;
 }
 
-#footer-content {
-    float: left;
-    margin-left: 50px;
-    max-width: 62%;
+.xdr-guest-header .content #logo {
+    width: 240px;
+    height: 70px;
+    background: url('../../../assets/images/gabbuz_small.png') no-repeat -21px 0px;
 }
 
-#border-left {
+.xdr-guest-header #border-left {
     position: absolute;
     width: 164px;
     height: 1px;
@@ -47,7 +33,7 @@
     border-bottom: 1px solid #7aa3b9;
 }
 
-#border-right {
+.xdr-guest-header #border-right {
     position: absolute;
     width: 100%;
     height: 1px;
@@ -56,13 +42,14 @@
     border-bottom: 1px solid #7aa3b9;
 }
 
-#top-bar-triangle, #top-bar-triangle-border {
+.xdr-guest-header #top-bar-triangle, .xdr-guest-header #top-bar-triangle-border {
     position: absolute;
     left: 163px;
     bottom: -29px;
+    z-index: 99;
 }
 
-#top-bar-triangle {
+.xdr-guest-header #top-bar-triangle {
     font-size: 0;
     height: 0;
     line-height: 0;
@@ -74,32 +61,41 @@
     border-width: 29px 29px 0 29px;
 }
 
-#top-bar-triangle-border {
+.xdr-guest-header #top-bar-triangle-border {
     background-image: url('../../../assets/images/top_bar_arrow_border.out.png');
     width: 58px;
     height: 29px;
 }
 
-#logo {
-    position: absolute;
-    width: 200px;
-    height: 70px;
-    background: url('../../../assets/images/gabbuz_small.png') no-repeat;
-    left: 32px;
-    top: 16px;
+.xdr-guest-middle {
+    padding: 30px 20px 0;
+    overflow: auto;
+    height: 100%;
 }
 
-#footer {
-    margin-top: 19px;
+.xdr-guest-footer {
+    height: 107px;
+    display: flex;
+    border-top: 1px solid #7aa3b9;
+    align-items: center;
+    padding: 0 20px;
+    margin: auto auto 0 auto;
 }
 
-#footer a {
+.xdr-guest-footer .content {
+    padding: 20px 0;
+}
+
+.xdr-guest-footer .content #links {
+}
+
+.xdr-guest-footer .content #links a {
     color: #a1b5c8;
     text-decoration: none;
     font-size: 13px;
 }
 
-#copyright {
+.xdr-guest-footer .content #copyright {
     width: 730px;
     margin-top: 10px;
     color: #425c73;
