@@ -1,13 +1,13 @@
-# ![alt text](https://i.imgur.com/OTtNhTo.png) aXDR CMS 
+# ![alt text](https://i.imgur.com/OTtNhTo.png) jXDR CMS 
 ##### Version Alpha 7.0.0
 ##### Rodolfo Contreras (Mr.M) - Arctic Development
 
 ### Getting Started
-> aXDR CMS is a fresh from scratch Emulation website which emulates HabboWEB in a different style. **aXDR** stands for Azure XDR Content Management System. Although this project is pretty different to the original version created by **Boris Akopov**, the fundamental idea of **XDR** has not changed. **XDR** WEB offered a better system that could overlap other projects with modern technologies and functions. Right now aXDR is divided into two parts: *aXDR WEB App* **(FrontEnd)** & *aXDR API* **(Backend)**. This repository is only for aXDR WEB App made in angular.
+> jXDR CMS is a fresh from scratch Emulation website which emulates HabboWEB in a different style. **jXDR** stands for Javascript XDR Content Management System. Although this project is pretty different to the original version created by **Boris Akopov**, the fundamental idea of **XDR** has not changed. **XDR** WEB offered a better system that could overlap other projects with modern technologies and functions. Right now jXDR is divided into two parts: *aXDR WEB App* **(FrontEnd)** & *aXDR API* **(Backend)**. This repository is only for jXDR WEB App made in angular.
 
 ### Features
-+ aXDR WEB App is currently working under *Angular 8*.
-+ aXDR API is currently working under *ExpressJS*
++ jXDR WEB App is currently working under *Angular 8*.
++ jXDR API is currently working under *ExpressJS*
 ---
 ## aXDR WEB Changelog
 > #### Pre-Alpha:
